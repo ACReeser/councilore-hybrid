@@ -1,0 +1,23 @@
+.charge{
+    display:inline-block;
+    width:64px;
+    height:64px;
+    border-radius: 8px;
+    padding:10px;
+}
+.charge img{
+    max-width: 64px;    
+    max-height: 64px;
+    margin: auto;
+    display: block;
+}
+.charge:hover{
+    transform: scale(1.2);
+}
+.shield img, .shield svg{
+    max-width: 244px;
+    margin: auto;
+    display: block;
+    padding:10px;
+}
+.hidden{display: none;}
