@@ -1,0 +1,38 @@
+[
+    {
+        "id":"flashflood",
+        "title":"Flash Flood!",
+        "description":"",
+        "requirements": null,
+        "resolutions": [
+            {
+                "id": "dynamite",
+                "preDescription": "Create a dam by dismantling some peon's cottages",
+                "postDescription": "",
+                "societyDelta": -1
+            },
+            {
+                "id": "sandbags",
+                "preDescription": "Have the whole citizenry start filling sandbags",
+                "postDescription": "",
+                "societyDelta": 1,
+                "treasuryRequirement": 5
+            },
+            {
+                "id": "ignore",
+                "preDescription": "Board up the mansions, it's everyone for themself!",
+                "postDescription": "",
+                "societyDelta": -1,
+                "tradeDelta": -1,
+                "lawDelta": -1
+            },
+            {
+                "id": "evacuate",
+                "preDescription": "Evacuate the populace to higher ground",
+                "postDescription": "",
+                "tradeDelta": -1,
+                "loreDelta": 1
+            }
+        ]
+    }
+]
