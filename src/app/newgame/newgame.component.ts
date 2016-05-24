@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ChargesService, ChargeDictionary} from '../charges.service';
 //import {OrderBy} from '../order-by.pipe'
 import { Router } from '@angular/router';
+import {City} from '../models/city';
+import {GameConfig} from '../models/game.config';
+
 enum SortBy { Element = 0, Category }
 
 @Component({
@@ -20,7 +23,7 @@ export class NewgameComponent implements OnInit {
   charges: string[];
   currentSort: SortBy = SortBy.Element;
   currentIndex = 0;
-  quadrants = [];
+  newGame: GameConfig = GameConfig.CreateNew();
   
   ngOnInit() {
       this.metadata = this.chargeSvc.charges;
@@ -50,7 +53,7 @@ export class NewgameComponent implements OnInit {
       this.sort();
   }
   select(charge: string){
-      this.quadrants[this.currentIndex] = charge;
+      this.newGame.city.quadrants[this.currentIndex] = charge;
       this.currentIndex++;
       if (this.currentIndex > 3)
         this.currentIndex = 0;

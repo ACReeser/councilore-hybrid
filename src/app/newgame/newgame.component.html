@@ -3,11 +3,11 @@
     <div>
         <p>
             Name your Town
-            <input type="text">
+            <input type="text" [(ngModel)]="newGame.city.name">
         </p>
         <p>
             Select your Suit Of Arms
-            &nbsp;<a class="pure-button pure-button-primary" [class.hidden]="quadrants.length != 4" (click)="finish()">Done!</a>
+            &nbsp;<a class="pure-button pure-button-primary" [class.hidden]="newGame.city.quadrants.length != 4" (click)="finish()">Done!</a>
         </p>
         <div class="shield">
              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -26,15 +26,15 @@
                     <path class="st4" d="M747.4,785.2v1052.9c0,0-0.1,0-0.1,0c-369.9,0-790.3-456.5-794.2-1052.9H747.4z"  [class.hidden]="currentIndex!=2"/>
                 </g>
                 <g>
-                    <path class="st0" d="M1476.9,785.2c0,551.4-388.1,974.6-729.4,974.6c0,0-0.1,0-0.1,0V785.3L1476.9,785.2z"[attr.fill]="metadata[quadrants[3]]?.color || 'white'"/>
-                    <rect x="747.4" y="15" class="st1" width="729.5" height="770.2"[attr.fill]="metadata[quadrants[1]]?.color || 'white'"/>
-                    <rect x="17.9" y="15" class="st2" width="729.5" height="770.2"[attr.fill]="metadata[quadrants[0]]?.color || 'white'"/>
-                    <path class="st3" d="M17.9,785.2c0,551.4,388.1,974.6,729.4,974.6c0,0,0.1,0,0.1,0V785.3L17.9,785.2z"[attr.fill]="metadata[quadrants[2]]?.color || 'white'"/>
+                    <path class="st0" d="M1476.9,785.2c0,551.4-388.1,974.6-729.4,974.6c0,0-0.1,0-0.1,0V785.3L1476.9,785.2z"[attr.fill]="metadata[newGame.city.quadrants[3]]?.color || 'white'"/>
+                    <rect x="747.4" y="15" class="st1" width="729.5" height="770.2"[attr.fill]="metadata[newGame.city.quadrants[1]]?.color || 'white'"/>
+                    <rect x="17.9" y="15" class="st2" width="729.5" height="770.2"[attr.fill]="metadata[newGame.city.quadrants[0]]?.color || 'white'"/>
+                    <path class="st3" d="M17.9,785.2c0,551.4,388.1,974.6,729.4,974.6c0,0,0.1,0,0.1,0V785.3L17.9,785.2z"[attr.fill]="metadata[newGame.city.quadrants[2]]?.color || 'white'"/>
                 </g>
-                <image xlink:href="" [attr.xlink:href]="'/content/svgs/'+quadrants[0]+'.svg'" x="10%" y="2%" height="34%" width="34%" (click)="currentIndex = 0"/>
-                <image xlink:href="" [attr.xlink:href]="'/content/svgs/'+quadrants[1]+'.svg'" x="54%" y="2%" height="34%" width="34%" (click)="currentIndex = 1"/>
-                <image xlink:href="" [attr.xlink:href]="'/content/svgs/'+quadrants[2]+'.svg'" x="10%" y="45%" height="34%" width="34%" (click)="currentIndex = 2"/>
-                <image xlink:href="" [attr.xlink:href]="'/content/svgs/'+quadrants[3]+'.svg'" x="54%" y="45%" height="34%" width="34%" (click)="currentIndex = 3"/>
+                <image xlink:href="" [attr.xlink:href]="'/content/svgs/'+newGame.city.quadrants[0]+'.svg'" x="10%" y="2%" height="34%" width="34%" (click)="currentIndex = 0"/>
+                <image xlink:href="" [attr.xlink:href]="'/content/svgs/'+newGame.city.quadrants[1]+'.svg'" x="54%" y="2%" height="34%" width="34%" (click)="currentIndex = 1"/>
+                <image xlink:href="" [attr.xlink:href]="'/content/svgs/'+newGame.city.quadrants[2]+'.svg'" x="10%" y="45%" height="34%" width="34%" (click)="currentIndex = 2"/>
+                <image xlink:href="" [attr.xlink:href]="'/content/svgs/'+newGame.city.quadrants[3]+'.svg'" x="54%" y="45%" height="34%" width="34%" (click)="currentIndex = 3"/>
             </svg>
         </div>
     </div>
