@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DecisionService} from '../decision.service'
+import {DailyDecision} from '../models/decision'
 
 export class Game {
     day: number;
@@ -8,17 +10,24 @@ export class Game {
   moduleId: module.id,
   selector: 'app-game',
   templateUrl: 'game.component.html',
-  styleUrls: ['game.component.css']
+  styleUrls: ['game.component.css'],
+  providers: [DecisionService]
 })
 export class GameComponent implements OnInit {
 
   game: Game;
-  constructor() {
+  daily: DailyDecision;
+  constructor(private decSvc: DecisionService) {
       this.game = new Game();
       this.game.day = 1;
+      this.getDaily();
   }
 
   ngOnInit() {
+  }
+  
+  getDaily(){
+      this.decSvc.getNextDailyDecision();
   }
 
 }

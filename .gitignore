@@ -1,3 +1,4 @@
 dist/*
 node_modules/*
 tmp/*
+src/app/data/decision.data.json

@@ -3,6 +3,7 @@ import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, Routes, Router } from '@angular/ro
 import {MenuComponent} from './menu/menu.component';
 import {GameComponent} from './game/game.component';
 import {NewgameComponent} from './newgame/newgame.component';
+import { HTTP_PROVIDERS } from '@angular/http';
 
 @Routes([
   { path: "/menu",     
@@ -18,7 +19,7 @@ import {NewgameComponent} from './newgame/newgame.component';
   templateUrl: 'ng-councilore.component.html',
   styleUrls: ['ng-councilore.component.css'],  
   directives: [ROUTER_DIRECTIVES],
-  providers: [ROUTER_PROVIDERS]
+  providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS]
 })
 export class NgCounciloreAppComponent implements OnInit {
   title = 'Councilore';
