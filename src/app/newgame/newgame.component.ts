@@ -4,6 +4,7 @@ import {ChargesService, ChargeDictionary} from '../charges.service';
 import { Router } from '@angular/router';
 import {City} from '../models/city';
 import {GameConfig} from '../models/game.config';
+import {GameService} from '../game.service';
 
 enum SortBy { Element = 0, Category }
 
@@ -17,7 +18,7 @@ enum SortBy { Element = 0, Category }
 })
 export class NewgameComponent implements OnInit {
 
-  constructor(private chargeSvc: ChargesService, private router: Router) {}
+  constructor(private chargeSvc: ChargesService, private router: Router, private gameSvc: GameService) {}
 
   metadata: ChargeDictionary;
   charges: string[];
@@ -60,6 +61,7 @@ export class NewgameComponent implements OnInit {
   }
   finish(){
       this.currentIndex = -1;
-      this.router.navigate(['/game'])
+      this.gameSvc.currentGame = this.newGame;
+      this.router.navigate(['/game']);
   }
 }

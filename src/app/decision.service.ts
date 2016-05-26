@@ -4,7 +4,9 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 
-import {DailyDecision} from './models/decision';
+import {DailyDecision, DecisionResolution} from './models/decision';
+import {GameConfig} from './models/game.config';
+import {GameService} from './game.service';
 
 @Injectable()
 export class DecisionService {
@@ -12,13 +14,20 @@ export class DecisionService {
   private sampleDataURL: string = "/app/data/sample.data.json";
   public AllDecisions: DailyDecision[];
   
-  public DailyDecision: Observable<DailyDecision>;
-  private _daily: Observer<DailyDecision>;
+  private currentDailyFeed: Observable<DailyDecision>;
+  private _dailyFeed: Observer<DailyDecision>;
   
-  constructor(private http: Http) {
-    this.DailyDecision = new Observable(observer => {
+  constructor(private http: Http, private gameSvc: GameService) {
+  }  
+  
+  public getDailyFeed(): Observable<DailyDecision> {
+    this.currentDailyFeed = new Observable(observer => {
+        this._dailyFeed = observer;
+        this.pullAllDecisions();
+    });
+    
+    return this.currentDailyFeed;
   }
-  
   
   private pullAllDecisions(){
     this.getAllDecisions().subscribe(
@@ -41,13 +50,29 @@ export class DecisionService {
       .map(this.extractArray);
   }
   
-  private nextDay: DailyDecision;
-  private getNextDecision(){
+  private currentDay: DailyDecision;
+  private getNextDecision(): DailyDecision{
+      var result: DailyDecision;
+      var candidates: DailyDecision[] =
+        this.AllDecisions.filter((dec) => {
+            if (dec.requirements == null)
+                return true;
+            else
+            {
+                //todo: requirement logic 
+            }
+            
+            return false;
+        }) || [];
       
+      result = candidates[Math.floor(Math.random()* candidates.length)];
+      
+      return result;
   }
   
   askForNextDailyDecision(){
-      this._daily.next(this.nextDay);
+      this.currentDay = this.getNextDecision();
+      this._dailyFeed.next(this.currentDay);
   }
   
   private extractArray(res: Response) {

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {DecisionService} from '../decision.service'
-import {DailyDecision} from '../models/decision'
-
-export class Game {
-    day: number;
-}
+import {DecisionService} from '../decision.service';
+import {DailyDecision} from '../models/decision';
+import {GameConfig} from '../models/game.config';
+import {GameService} from '../game.service';
 
 @Component({
   moduleId: module.id,
@@ -15,19 +13,19 @@ export class Game {
 })
 export class GameComponent implements OnInit {
 
-  game: Game;
+  game: GameConfig;
   daily: DailyDecision;
-  constructor(private decSvc: DecisionService) {
-      this.game = new Game();
-      this.game.day = 1;
-      this.getDaily();
+  constructor(private decSvc: DecisionService, private gameSvc: GameService) {
+      this.game = gameSvc.currentGame;
   }
 
   ngOnInit() {
-      this.decSvc.DailyDecision.subscribe((daily) => this.daily = daily);      
+      this.decSvc.getDailyFeed().subscribe((daily) => {
+          this.daily = daily;
+      });      
   }
   
-  getDaily(){
+  finishDay(){
       this.decSvc.askForNextDailyDecision();
   }
 
