@@ -24,10 +24,11 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.decSvc.DailyDecision.subscribe((daily) => this.daily = daily);      
   }
   
   getDaily(){
-      this.decSvc.getNextDailyDecision();
+      this.decSvc.askForNextDailyDecision();
   }
 
 }
