@@ -1,6 +1,37 @@
 .pure-u-1.text-center{
     margin-bottom: 6px;
 }
+
+.stats > div{
+    display: inline-block;
+}
+.stat-bar{
+    width: 44px;
+    background-color: #ddd;
+    height: 100px;
+    margin: 1em 10px;
+    position: relative;
+}
+
+.stat-bar > .inner{
+    position: absolute;
+    bottom:0;
+    height: 0%;
+    width: 100%;
+    background: green;
+}
+
+.label{
+    width: 64px;
+    text-align: center;
+    display: inline-block;
+}
+
+.results{
+    margin:auto;
+    width:200px;
+}
+
 .bag{
     max-width: 200px;
     margin: 100px auto 25px auto;

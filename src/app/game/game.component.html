@@ -1,4 +1,5 @@
 <div>
+  <h1>{{game.city.name}}</h1>
   <h3>Day {{game.city.day}}</h3>
   <div [style.display]="state < 2 ? 'block': 'none'">
     <h2>{{daily?.title}}</h2>
@@ -12,9 +13,52 @@
     </div>      
   </div>
   <div [style.display]="state==1 ? 'block': 'none'">
-    <p>
+    <p class="text-center">
         {{selectedResolution?.postDescription}}
     </p>
+    <div class="results">
+        <table>
+            <tbody>
+                <tr *ngIf="selectedResolution?.treasuryDelta">
+                    <td>Treasury</td>
+                    <td>
+                        &nbsp;<span *ngIf="selectedResolution?.treasuryDelta > 0">+</span>
+                        {{selectedResolution?.treasuryDelta}}</td>
+                </tr>
+                <tr *ngIf="selectedResolution?.lawDelta">
+                    <td>Law</td>
+                    <td>
+                        &nbsp;<span *ngIf="selectedResolution?.lawDelta > 0">+</span>
+                        {{selectedResolution?.lawDelta}}                        
+                    </td>
+                </tr>
+                <tr *ngIf="selectedResolution?.farmingDelta">
+                    <td>Farming</td>
+                    <td>
+                        &nbsp;<span *ngIf="selectedResolution?.farmingDelta > 0">+</span>
+                        {{selectedResolution?.farmingDelta}}</td>
+                </tr>
+                <tr *ngIf="selectedResolution?.tradeDelta">
+                    <td>Trade</td>
+                    <td>
+                        &nbsp;<span *ngIf="selectedResolution?.tradeDelta > 0">+</span>
+                        {{selectedResolution?.tradeDelta}}</td>
+                </tr>
+                <tr *ngIf="selectedResolution?.societyDelta">
+                    <td>Society</td>
+                    <td>
+                        &nbsp;<span *ngIf="selectedResolution?.societyDelta > 0">+</span>
+                        {{selectedResolution?.societyDelta}}</td>
+                </tr>
+                <tr *ngIf="selectedResolution?.loreDelta">
+                    <td>Lore</td>
+                    <td>
+                        &nbsp;<span *ngIf="selectedResolution?.loreDelta > 0">+</span>
+                        {{selectedResolution?.loreDelta}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="text-center">
         <a class="pure-button pure-button-primary" (click)="finishResolution()">OK</a>
     </div>
@@ -43,41 +87,41 @@
   <div class="stats">
       <div>
           <h5>Treasury</h5>
-          <span>{{game.city.treasury || 0}}</span>
+          <span class="label">{{game.city.treasury || 0}}</span>
       </div>
       <div>
           <h5>Farming</h5>
+          <span class="label">{{game.city.stats.farming.value}}</span>
           <div class="stat-bar">
-              <span class="label">{{game.city.stats.farming.value}}</span>
-              <div class="inner"></div>
+              <div class="inner"[ngStyle]="game.city.stats.farming.getStyle()"></div>
           </div>
       </div>
       <div>
           <h5>Trade</h5>
+          <span class="label">{{game.city.stats.trade.value}}</span>
           <div class="stat-bar">
-              <span class="label">{{game.city.stats.trade.value}}</span>
-              <div class="inner"></div>
+              <div class="inner" [ngStyle]="game.city.stats.trade.getStyle()"></div>
           </div>
       </div>
       <div>
           <h5>Lore</h5>
+          <span class="label">{{game.city.stats.lore.value}}</span>
           <div class="stat-bar">
-              <span class="label">{{game.city.stats.lore.value}}</span>
-              <div class="inner"></div>
+              <div class="inner"[ngStyle]="game.city.stats.lore.getStyle()"></div>
           </div>
       </div>
       <div>
           <h5>Society</h5>
+          <span class="label">{{game.city.stats.society.value}}</span>
           <div class="stat-bar">
-              <span class="label">{{game.city.stats.society.value}}</span>
-              <div class="inner"></div>
+              <div class="inner"[ngStyle]="game.city.stats.society.getStyle()"></div>
           </div>
       </div>
       <div>
           <h5>Law</h5>
+          <span class="label">{{game.city.stats.law.value}}</span>
           <div class="stat-bar">
-              <span class="label">{{game.city.stats.law.value}}</span>
-              <div class="inner"></div>
+              <div class="inner" [ngStyle]="game.city.stats.law.getStyle()"></div>
           </div>
       </div>
   </div>

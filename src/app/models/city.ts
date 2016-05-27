@@ -1,3 +1,5 @@
+import {DecisionResolution} from './decision';
+
 export class City {
     name: string;
     day: number;
@@ -7,6 +9,15 @@ export class City {
     
     constructor() {
         this.stats = new Stats();
+    }
+    
+    applyResolution(res: DecisionResolution): void{
+        this.treasury += res.treasuryDelta || 0;
+        this.stats.law.value += res.lawDelta || 0;
+        this.stats.farming.value += res.farmingDelta || 0;
+        this.stats.trade.value += res.tradeDelta || 0;
+        this.stats.lore.value += res.loreDelta || 0;
+        this.stats.society.value += res.societyDelta || 0;
     }
 }
 
@@ -46,5 +57,11 @@ export class StatRange{
     //used when calculating taxes and corruption
     getTier(): number{
         return Math.ceil(this.value / (this.maximum - this.minimum + 1)  / this.numberOfTiers);
+    }
+    
+    getStyle(){
+        return {
+            height: (this.value / this.maximum * 100) + '%'
+        }
     }
 }

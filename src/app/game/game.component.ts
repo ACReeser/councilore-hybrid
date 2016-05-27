@@ -49,6 +49,7 @@ export class GameComponent implements OnInit {
       this.state = ViewState.DecisionResolution;
       this.selectedResolution = res;
       this.game.history.push(new DecisionHistory(this.daily.id, res.id));
+      this.game.city.applyResolution(res);
   }
   
   finishResolution(): void {
