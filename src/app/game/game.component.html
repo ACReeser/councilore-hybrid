@@ -7,7 +7,7 @@
   <div [style.display]="state==0 ? 'block': 'none'">
     <div class="pure-g">
         <div class="pure-u-1 text-center" *ngFor="let r of daily?.resolutions">
-            <a href="#" class="pure-button pure-button-primary" (click)="selectResolution(r)" >{{r.preDescription}}</a>
+            <a  class="pure-button pure-button-primary" (click)="selectResolution(r)" >{{r.preDescription}}</a>
         </div>
     </div>      
   </div>
@@ -15,21 +15,30 @@
     <p>
         {{selectedResolution?.postDescription}}
     </p>
-    <a href="#" class="pure-button pure-button-primary" (click)="finishResolution()">OK</a>      
+    <div class="text-center">
+        <a class="pure-button pure-button-primary" (click)="finishResolution()">OK</a>
+    </div>
   </div>
   <div [style.display]="state==2 ? 'block': 'none'">
     <h3>Expansion Phase</h3>
     <p>
         
     </p>
-    <a href="#" class="pure-button pure-button-primary" (click)="finishExpansion()">OK</a>      
+    <div class="text-center">
+        <a class="pure-button pure-button-primary" (click)="finishExpansion()">OK</a>
+    </div>
   </div>
   <div [style.display]="state==3 ? 'block': 'none'">
     <h3>Taxes</h3>
-    <p>
-        
-    </p>
-    <a href="#" class="pure-button pure-button-primary" (click)="finishDay()">OK</a>      
+    <div class="bag-container" [class.tumble-and-fade]="state == 3">
+        <img src="/content/svgs/coin-01.svg" alt="" class="coin c0"/>
+        <img src="/content/svgs/coin-01.svg" alt="" class="coin c1"/>
+        <img src="/content/svgs/coin-01.svg" alt="" class="coin c2"/>
+        <img src="/content/svgs/bag-01.svg" alt="" class="bag">
+    </div>
+    <div class="text-center">
+        <a class="pure-button pure-button-primary" (click)="finishDay()">OK</a>
+    </div>
   </div>
   <div class="stats">
       <div>

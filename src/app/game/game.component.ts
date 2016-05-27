@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgStyle} from '@angular/common';
 import {DecisionService} from '../decision.service';
 import {DailyDecision, DecisionResolution, DecisionHistory} from '../models/decision';
 import {GameConfig} from '../models/game.config';
@@ -11,18 +12,28 @@ enum ViewState {
     TaxesAndCrime
 }
 
+interface Window {
+    Math: typeof Math;
+}
+
 @Component({
   moduleId: module.id,
   selector: 'app-game',
   templateUrl: 'game.component.html',
   styleUrls: ['game.component.css'],
-  providers: [DecisionService]
+  providers: [DecisionService],
+  directives: [NgStyle]
 })
 export class GameComponent implements OnInit {
   state: ViewState = ViewState.DecisionList;
   game: GameConfig;
   daily: DailyDecision;
   selectedResolution: DecisionResolution;
+  coinStyles = [
+        { left: (Math.random()*50 -25), 'animation-delay': Math.random() }, 
+        { left: (Math.random()*50 -25), 'animation-delay': Math.random() },
+        { left: (Math.random()*50 -25), 'animation-delay': Math.random() }
+      ];
   
   constructor(private decSvc: DecisionService, private gameSvc: GameService) {
       this.game = gameSvc.currentGame;
