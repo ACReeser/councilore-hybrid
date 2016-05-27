@@ -1,20 +1,75 @@
 <div>
-  game works!
   <h3>Day {{game.city.day}}</h3>
-  <h2>{{daily?.title}}</h2>
-  <p>{{daily?.description}}</p>
-  <div class="pure-g">
-    <div class="pure-u-1 text-center">
-        <a href="" class="pure-button pure-button-primary">Do this</a>
-    </div>
-    <div class="pure-u-1 text-center">
-        <a href="" class="pure-button pure-button-primary">Do That</a>
-    </div>
-    <div class="pure-u-1 text-center">
-        <a href="" class="pure-button pure-button-primary">Do This Other Thing</a>
-    </div>
-    <div class="pure-u-1 text-center">
-        <a href="" class="pure-button pure-button-primary">Do Nothing</a>
-    </div>
+  <div [style.display]="state < 2 ? 'block': 'none'">
+    <h2>{{daily?.title}}</h2>
+    <p>{{daily?.description}}</p>
+  </div>
+  <div [style.display]="state==0 ? 'block': 'none'">
+    <div class="pure-g">
+        <div class="pure-u-1 text-center" *ngFor="let r of daily?.resolutions">
+            <a href="#" class="pure-button pure-button-primary" (click)="selectResolution(r)" >{{r.preDescription}}</a>
+        </div>
+    </div>      
+  </div>
+  <div [style.display]="state==1 ? 'block': 'none'">
+    <p>
+        {{selectedResolution?.postDescription}}
+    </p>
+    <a href="#" class="pure-button pure-button-primary" (click)="finishResolution()">OK</a>      
+  </div>
+  <div [style.display]="state==2 ? 'block': 'none'">
+    <h3>Expansion Phase</h3>
+    <p>
+        
+    </p>
+    <a href="#" class="pure-button pure-button-primary" (click)="finishExpansion()">OK</a>      
+  </div>
+  <div [style.display]="state==3 ? 'block': 'none'">
+    <h3>Taxes</h3>
+    <p>
+        
+    </p>
+    <a href="#" class="pure-button pure-button-primary" (click)="finishDay()">OK</a>      
+  </div>
+  <div class="stats">
+      <div>
+          <h5>Treasury</h5>
+          <span>{{game.city.treasury || 0}}</span>
+      </div>
+      <div>
+          <h5>Farming</h5>
+          <div class="stat-bar">
+              <span class="label">{{game.city.stats.farming.value}}</span>
+              <div class="inner"></div>
+          </div>
+      </div>
+      <div>
+          <h5>Trade</h5>
+          <div class="stat-bar">
+              <span class="label">{{game.city.stats.trade.value}}</span>
+              <div class="inner"></div>
+          </div>
+      </div>
+      <div>
+          <h5>Lore</h5>
+          <div class="stat-bar">
+              <span class="label">{{game.city.stats.lore.value}}</span>
+              <div class="inner"></div>
+          </div>
+      </div>
+      <div>
+          <h5>Society</h5>
+          <div class="stat-bar">
+              <span class="label">{{game.city.stats.society.value}}</span>
+              <div class="inner"></div>
+          </div>
+      </div>
+      <div>
+          <h5>Law</h5>
+          <div class="stat-bar">
+              <span class="label">{{game.city.stats.law.value}}</span>
+              <div class="inner"></div>
+          </div>
+      </div>
   </div>
 </div>

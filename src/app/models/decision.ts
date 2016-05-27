@@ -1,6 +1,5 @@
-export class Decision {
-    decisionID: string;
-    resolutionID: string;
+export class DecisionHistory {
+    constructor(public decisionID: string, public resolutionID: string) {}
 }
 
 export class DecisionResolution {
@@ -31,6 +30,6 @@ export class DailyDecision {
     id: string;
     title: string;
     description: string;
-    requirements: Decision;
+    requirements: DecisionHistory;
     resolutions: DecisionResolution[] = [];
 }

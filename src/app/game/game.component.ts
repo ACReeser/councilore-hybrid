@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {DecisionService} from '../decision.service';
-import {DailyDecision} from '../models/decision';
+import {DailyDecision, DecisionResolution, DecisionHistory} from '../models/decision';
 import {GameConfig} from '../models/game.config';
 import {GameService} from '../game.service';
+
+enum ViewState {
+    DecisionList = 0,
+    DecisionResolution,
+    ExpansionPhase,
+    TaxesAndCrime
+}
 
 @Component({
   moduleId: module.id,
@@ -12,9 +19,11 @@ import {GameService} from '../game.service';
   providers: [DecisionService]
 })
 export class GameComponent implements OnInit {
-
+  state: ViewState = ViewState.DecisionList;
   game: GameConfig;
   daily: DailyDecision;
+  selectedResolution: DecisionResolution;
+  
   constructor(private decSvc: DecisionService, private gameSvc: GameService) {
       this.game = gameSvc.currentGame;
   }
@@ -25,8 +34,30 @@ export class GameComponent implements OnInit {
       });      
   }
   
+  selectResolution(res: DecisionResolution): void{
+      this.state = ViewState.DecisionResolution;
+      this.selectedResolution = res;
+      this.game.history.push(new DecisionHistory(this.daily.id, res.id));
+  }
+  
+  finishResolution(): void {
+      if (this.selectedResolution.allowsExpansionPhase)
+      {
+        this.state = ViewState.ExpansionPhase;
+      }
+      else
+      {
+          this.state = ViewState.TaxesAndCrime;
+      }
+  }
+  
+  finishExpansion(){
+      this.state = ViewState.TaxesAndCrime;      
+  }
+  
   finishDay(){
       this.decSvc.askForNextDailyDecision();
+      this.state = ViewState.DecisionList;
   }
 
 }

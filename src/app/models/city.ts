@@ -3,7 +3,7 @@ export class City {
     day: number;
     quadrants: string[] = [];
     stats: Stats;
-    treasury: number;
+    treasury: number = 0;
     
     constructor() {
         this.stats = new Stats();
