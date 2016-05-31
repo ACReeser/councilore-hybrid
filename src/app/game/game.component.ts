@@ -29,6 +29,7 @@ export class GameComponent implements OnInit {
   game: GameConfig;
   daily: DailyDecision;
   selectedResolution: DecisionResolution;
+  taxCollected: number = 0;
   coinStyles = [
         { left: (Math.random()*50 -25), 'animation-delay': Math.random() }, 
         { left: (Math.random()*50 -25), 'animation-delay': Math.random() },
@@ -59,12 +60,18 @@ export class GameComponent implements OnInit {
       }
       else
       {
-          this.state = ViewState.TaxesAndCrime;
+          this.moveToTaxes();
       }
   }
   
+  moveToTaxes(): void{
+          this.state = ViewState.TaxesAndCrime;
+          this.taxCollected = this.game.city.collectTaxes(); 
+      
+  }
+  
   finishExpansion(){
-      this.state = ViewState.TaxesAndCrime;      
+      this.moveToTaxes();
   }
   
   finishDay(){

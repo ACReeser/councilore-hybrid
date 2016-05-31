@@ -42,6 +42,30 @@
 .bag-container{
     position: relative;
 }
+.bag-amount{
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 50px);
+    width: 100px;
+    text-align: center;
+    background: url("/content/svgs/coin-02.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+.coin-label{
+    position: absolute;
+    left: -5px;
+    font-size: 2em;
+    top: 10px;
+}
+.coin-amount{    
+    width: 44px;
+    height: 44px;
+    display: block;
+    margin: auto;
+    font-size: 2em;
+    padding-top: 10px;
+}
 .coin{
     max-width: 64px;
     position:absolute;    

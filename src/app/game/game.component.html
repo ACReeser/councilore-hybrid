@@ -79,6 +79,12 @@
         <img src="/content/svgs/coin-01.svg" alt="" class="coin c1"/>
         <img src="/content/svgs/coin-01.svg" alt="" class="coin c2"/>
         <img src="/content/svgs/bag-01.svg" alt="" class="bag">
+        <div class="bag-amount">
+            <span *ngIf="taxCollected > 0" class="coin-label">+</span>
+            <span class="coin-amount">
+            {{taxCollected}}                
+            </span>
+        </div>
     </div>
     <div class="text-center">
         <a class="pure-button pure-button-primary" (click)="finishDay()">OK</a>

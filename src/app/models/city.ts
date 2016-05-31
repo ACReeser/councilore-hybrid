@@ -7,6 +7,8 @@ export class City {
     stats: Stats;
     treasury: number = 0;
     
+    static goldPerTradeTier = 5;
+     
     constructor() {
         this.stats = new Stats();
     }
@@ -18,6 +20,18 @@ export class City {
         this.stats.trade.value += res.tradeDelta || 0;
         this.stats.lore.value += res.loreDelta || 0;
         this.stats.society.value += res.societyDelta || 0;
+    }
+    
+    collectTaxes(): number{
+        var collected = Math.floor( Math.random() * this.stats.trade.getTier() * City.goldPerTradeTier );
+        var lostToCrime = this.stats.law.getTier();
+        
+        if (lostToCrime < 0)
+            collected -= lostToCrime;
+            
+        this.treasury += collected;
+        
+        return collected;        
     }
 }
 
