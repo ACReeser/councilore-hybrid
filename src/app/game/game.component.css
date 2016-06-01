@@ -195,3 +195,32 @@
   0% { -ms-transform:  translate(0px,-50px)  rotate(0deg); }
   100% { -ms-transform:  translate(0px,100px)  rotate(360deg) ; }
 }
+.dec-1::before, .dec-2::before, .dec-3::before, .dec-4::before, .dec-5::before, .dec-6::before{
+  background-color:white;
+  color:black;
+  font-size: 2em;
+}
+
+.dec-1::before{
+  content:"⚀";  
+}
+
+.dec-2::before{
+  content:"⚁";  
+}
+
+.dec-3::before{
+  content:"⚂";  
+}
+
+.dec-4::before{
+  content:"⚃";  
+}
+
+.dec-5::before{
+  content:"⚄";  
+}
+
+.dec-6::before{
+  content:"⚅";  
+}

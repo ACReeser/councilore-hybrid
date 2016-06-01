@@ -7,8 +7,16 @@
   </div>
   <div [style.display]="state==0 ? 'block': 'none'">
     <div class="pure-g">
-        <div class="pure-u-1 text-center" *ngFor="let r of daily?.resolutions">
-            <a  class="pure-button pure-button-primary" (click)="selectResolution(r)" >{{r.preDescription}}</a>
+        <div class="pure-u-1 text-center">
+            <table class="menu">
+                <tbody>
+                    <tr *ngFor="let r of daily?.resolutions">
+                        <td>
+                            <a  class="pure-button pure-button-primary" (click)="selectResolution(r)" >{{r.preDescription}}</a>                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>      
   </div>
