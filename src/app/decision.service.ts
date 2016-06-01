@@ -41,6 +41,13 @@ export class DecisionService {
   }
   private feedAllDecisions(decs: any){
     this.AllDecisions = decs;
+    for (var h = 0; h < decs.length; h++) {
+        var dec = decs[h];
+        for (var i = 0; i < dec.resolutions.length; i++) {
+            var res = dec.resolutions[i];
+            dec.resolutions[i] = DecisionResolution.fromJson(res);        
+        }        
+    }
     this.getNextDecision();
     this.askForNextDailyDecision();      
   }

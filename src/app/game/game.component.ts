@@ -43,6 +43,10 @@ export class GameComponent implements OnInit {
   ngOnInit() {
       this.decSvc.getDailyFeed().subscribe((daily) => {
           this.daily = daily;
+          for (var i = 0; i < this.daily.resolutions.length; i++) {
+              var res = this.daily.resolutions[i];
+              res.assignRequirements(this.game.city);
+          }
       });      
   }
   

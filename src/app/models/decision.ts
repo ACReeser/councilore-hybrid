@@ -1,3 +1,5 @@
+import {City} from './city';
+
 export class DecisionHistory {
     constructor(public decisionID: string, public resolutionID: string) {}
 }
@@ -7,6 +9,7 @@ export class DecisionResolution {
     preDescription: string;
     postDescription: string;
     specialInstructions: string; //might not be used
+    disabled: boolean = false;
     
     lawDelta: number = 0;
     tradeDelta: number = 0;
@@ -24,6 +27,25 @@ export class DecisionResolution {
     
     allowsExpansionPhase: boolean = true;
     allowsRecruitmentPhase: boolean = true;
+    
+    static fromJson(obj: any): DecisionResolution{
+        var instance = new DecisionResolution();
+        for (var prop in obj)
+            instance[prop] = obj[prop];
+            
+        return instance;
+    }
+    
+    assignRequirements(aCity: City): void{
+        this.disabled = (
+            (this.lawRequirement > aCity.stats.law.value) ||
+            (this.tradeRequirement > aCity.stats.trade.value) ||
+            (this.farmingRequirement > aCity.stats.farming.value) ||
+            (this.loreRequirement > aCity.stats.lore.value) ||
+            (this.societyRequirement > aCity.stats.society.value) ||
+            (this.treasuryRequirement > aCity.treasury)
+           ) === true;        
+    }
 }
 
 export class DailyDecision {
