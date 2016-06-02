@@ -11,8 +11,36 @@
             <table class="menu">
                 <tbody>
                     <tr *ngFor="let r of daily?.resolutions">
+                        <td>                  
+                            <p class="requirement-badge" *ngIf="r?.treasuryRequirement > 0">
+                                <img src="/content/flaticon/svg/coins.svg" alt="" class="middle">
+                                <span class="middle">{{r?.treasuryRequirement}}</span>                                
+                            </p>
+                            <p class="requirement-badge" *ngIf="r?.loreRequirement > 0">
+                                <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" alt="" class="middle">
+                                <span class="middle">{{r?.loreRequirement}}</span>
+                            </p>
+                            <p class="requirement-badge" *ngIf="r?.tradeRequirement > 0">
+                                <img src="/content/flaticon/svg/business.svg" alt="" class="middle">
+                                <span class="middle">{{r?.tradeRequirement}}</span>
+                            </p>
+                            <p class="requirement-badge" *ngIf="r?.farmingRequirement > 0">
+                                <img src="/content/flaticon/svg/food.svg" alt="" class="middle">
+                                <span class="middle">{{r?.farmingRequirement}}</span>
+                            </p>
+                            <p class="requirement-badge" *ngIf="r?.societyRequirement > 0">
+                                <img src="/content/flaticon/svg/social.svg" alt="" class="middle">
+                                <span class="middle">{{r?.societyRequirement}}</span>
+                            </p>
+                            <p class="requirement-badge" *ngIf="r?.lawRequirement > 0">
+                                <img src="/content/flaticon/svg/shapes.svg" alt="" class="middle">
+                                <span class="middle">{{r?.lawRequirement}}</span>
+                            </p>       
+                        </td>
                         <td>
-                            <a class="pure-button pure-button-primary" (click)="selectResolution(r)" [attr.disabled]="r.disabled ? true : null" >{{r.preDescription}}</a>                            
+                            <a class="pure-button pure-button-primary" (click)="selectResolution(r)" [attr.disabled]="r.disabled ? true : null" >   
+                                {{r.preDescription}}
+                            </a>                            
                         </td>
                     </tr>
                 </tbody>

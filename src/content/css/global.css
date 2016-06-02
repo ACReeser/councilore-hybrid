@@ -14,3 +14,8 @@ table.menu a{
     margin-bottom: 5px;
     width:100%;
 }
+
+.middle{
+    display: inline-block;
+    vertical-align: middle;
+}
