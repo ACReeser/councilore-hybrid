@@ -5,6 +5,10 @@
 .stats > div{
     display: inline-block;
 }
+.stats h5 {
+  font-size: 1em;
+  margin-top: 6px;
+}
 .stat-bar{
     width: 44px;
     background-color: #ddd;
@@ -21,6 +25,13 @@
     background: green;
 }
 
+.stat-icon{
+  max-width: 40px;
+  max-height: 40px;
+  margin: auto;
+  display: block;
+}
+
 .label{
     width: 64px;
     text-align: center;
@@ -31,7 +42,6 @@
     margin:auto;
     width:200px;
 }
-
 .bag{
     max-width: 200px;
     margin: 100px auto 25px auto;

@@ -51,6 +51,9 @@ export class GameComponent implements OnInit {
   }
   
   selectResolution(res: DecisionResolution): void{
+      if (res.disabled)
+        return;
+        
       this.state = ViewState.DecisionResolution;
       this.selectedResolution = res;
       this.game.history.push(new DecisionHistory(this.daily.id, res.id));
