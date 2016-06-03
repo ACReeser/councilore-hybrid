@@ -1,14 +1,13 @@
 <div>
     <h2 class="text-center">New Game</h2>
+    <section>
+        <h3>Town Name</h3>
+        <p class="text-center">
+            <input type="text" [(ngModel)]="newGame.city.name" placeholder="Townsville">
+        </p>
+    </section>
     <div>
-        <p>
-            Name your Town
-            <input type="text" [(ngModel)]="newGame.city.name">
-        </p>
-        <p>
-            Select your Suit Of Arms
-            &nbsp;<a class="pure-button pure-button-primary" [class.hidden]="newGame.city.quadrants.length != 4" (click)="finish()">Done!</a>
-        </p>
+        <h3>Suit Of Arms</h3>
         <div class="shield">
              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 1494.8 1776.3" style="enable-background:new 0 0 1494.8 1776.3;" xml:space="preserve">
@@ -38,6 +37,11 @@
             </svg>
         </div>
     </div>
+    <section>
+        <p class="text-center">
+            <a class="pure-button pure-button-primary" [style.visibility]="newGame.city.quadrants.length != 4 ? 'hidden' : 'visible'" (click)="finish()">Done!</a>
+        </p>
+    </section>
     <div>
         <div>
             <a class="pure-button" [class.pure-button-primary]="currentSort==0" (click)="setSort(0)">Element</a>

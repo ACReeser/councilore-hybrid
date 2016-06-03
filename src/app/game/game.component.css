@@ -1,7 +1,14 @@
 .pure-u-1.text-center{
     margin-bottom: 6px;
 }
-
+.menu.left{
+    position: relative;
+    right: 30px;
+}
+.stats{
+    margin: 20px auto auto auto;
+    width: 410px;    
+}
 .stats > div{
     display: inline-block;
 }

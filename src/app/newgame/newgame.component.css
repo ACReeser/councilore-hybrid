@@ -21,3 +21,13 @@
     padding:10px;
 }
 .hidden{display: none;}
+
+input[type=text]{
+    border-top:none;
+    border-left: none;
+    border-right: none;
+}
+input[type=text]:focus{
+    outline: none;
+    border-bottom: 2px #0078e7 solid;
+}
