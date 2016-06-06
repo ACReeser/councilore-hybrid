@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, Routes, Router } from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {GameComponent} from './game/game.component';
+import {HowToPlayComponent} from './howtoplay/howtoplay.component';
 import {NewgameComponent} from './newgame/newgame.component';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { GameService } from './game.service';
@@ -12,7 +13,9 @@ import { GameService } from './game.service';
   { path: "/new",     
     component: NewgameComponent }, 
   { path: "/game", 
-    component: GameComponent }
+    component: GameComponent },
+  { path: "/howtoplay", 
+    component: HowToPlayComponent }
 ])
 @Component({
   moduleId: module.id,

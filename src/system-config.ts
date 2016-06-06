@@ -33,6 +33,7 @@ const barrels: string[] = [
   'app/shieldpicker',
   'app/newgame',
   'app/game',
+  'app/howtoplay',
   /** @cli-barrel */
 ];
 

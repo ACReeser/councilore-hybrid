@@ -7,6 +7,7 @@ export class GameConfig{
     useCronies: boolean = false;
     influenceToWin: number = 15;
     history: DecisionHistory[];
+    isNew: boolean = false;
     
     static CreateNew(): GameConfig{
         var result = new GameConfig();

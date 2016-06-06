@@ -1,8 +1,11 @@
-h1{
+h1 {
     background-color: #C72A2A;
     padding: .7em;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px 0;    
+}
+h1 > a{
     color: white;
+    text-decoration: none;
 }
 
 .app-container{
