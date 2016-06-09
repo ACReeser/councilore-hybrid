@@ -31,3 +31,6 @@ input[type=text]:focus{
     outline: none;
     border-bottom: 2px #0078e7 solid;
 }
+input[type=text].invalid{
+    border-bottom: 2px red solid;
+}

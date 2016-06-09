@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {  ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
+import {GameService} from '../game.service'
+
 
 @Component({
   moduleId: module.id,
@@ -10,9 +12,20 @@ import {  ROUTER_DIRECTIVES } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() {}
+  hasSavedGame: boolean;
+  
+  constructor(private router: Router, private gameSvc: GameService) {}
 
   ngOnInit() {
+      this.hasSavedGame = this.gameSvc.hasSavedGame();
+  }
+  
+  resume(){
+      if (this.hasSavedGame)
+      {
+        this.gameSvc.loadLast();
+        this.router.navigate(['/game']);          
+      }
   }
 
 }

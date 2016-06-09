@@ -9,7 +9,7 @@
                 </tr>
                 <tr>
                     <td>
-        <a href="" [routerLink]="['/game']" class="pure-button pure-button-primary">Resume Game</a>                        
+        <a href="javascript:void(0);" (click)="resume()" [attr.disabled]="hasSavedGame ? null : true" class="pure-button pure-button-primary">Resume Game</a>                        
                     </td>
                 </tr>
                 <tr>

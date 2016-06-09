@@ -10,7 +10,7 @@
     width: 410px;    
 }
 .stats > div{
-    display: inline-block;
+    float:left;
 }
 .stats h5 {
   font-size: 1em;
@@ -37,6 +37,16 @@
   max-height: 40px;
   margin: auto;
   display: block;
+}
+.stat-change{
+    display: block;
+    padding:2px;
+    margin:2px;
+}
+.stat-change img{
+  max-width: 40px;
+  max-height: 40px;    
+  margin-top:2px;
 }
 .requirement-badge{
     width: 55px;

@@ -3,7 +3,7 @@
     <section>
         <h3>Town Name</h3>
         <p class="text-center">
-            <input type="text" [(ngModel)]="newGame.city.name" placeholder="Townsville">
+            <input type="text" [(ngModel)]="newGame.city.name" [class.invalid]="invalidName" placeholder="Townsville">
         </p>
     </section>
     <div>

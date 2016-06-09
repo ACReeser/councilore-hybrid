@@ -6,6 +6,7 @@ import {HowToPlayComponent} from './howtoplay/howtoplay.component';
 import {NewgameComponent} from './newgame/newgame.component';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { GameService } from './game.service';
+import { StorageService } from './storage.service';
 
 @Routes([
   { path: "/menu",     
@@ -23,7 +24,7 @@ import { GameService } from './game.service';
   templateUrl: 'ng-councilore.component.html',
   styleUrls: ['ng-councilore.component.css'],  
   directives: [ROUTER_DIRECTIVES],
-  providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, GameService]
+  providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, GameService, StorageService]
 })
 export class NgCounciloreAppComponent implements OnInit {
   title = 'Councilore';

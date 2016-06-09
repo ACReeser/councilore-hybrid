@@ -25,6 +25,7 @@ export class NewgameComponent implements OnInit {
   currentSort: SortBy = SortBy.Element;
   currentIndex = 0;
   newGame: GameConfig = GameConfig.CreateNew();
+  invalidName: boolean;
   
   ngOnInit() {
       this.metadata = this.chargeSvc.charges;
@@ -60,8 +61,13 @@ export class NewgameComponent implements OnInit {
         this.currentIndex = 0;
   }
   finish(){
+      if (this.newGame.city.name == null || this.newGame.city.name == "") {
+          this.invalidName = true;
+          return;
+      }
       this.currentIndex = -1;
       this.gameSvc.currentGame = this.newGame;
+      this.gameSvc.save();
       this.router.navigate(['/game']);
   }
 }
