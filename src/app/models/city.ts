@@ -16,11 +16,11 @@ export class City {
     
     applyResolution(res: DecisionResolution): void{
         this.treasury += res.treasuryDelta || 0;
-        this.stats.law.value += res.lawDelta || 0;
-        this.stats.farming.value += res.farmingDelta || 0;
-        this.stats.trade.value += res.tradeDelta || 0;
-        this.stats.lore.value += res.loreDelta || 0;
-        this.stats.society.value += res.societyDelta || 0;
+        this.stats.law.setValue( res.lawDelta || 0);
+        this.stats.farming.setValue(res.farmingDelta || 0);
+        this.stats.trade.setValue(res.tradeDelta || 0);
+        this.stats.lore.setValue(res.loreDelta || 0);
+        this.stats.society.setValue(res.societyDelta || 0);
     }
     
     collectTaxes(): number{
@@ -72,7 +72,7 @@ export class StatRange{
     value: number;
     numberOfTiers: number;
     
-    constructor(name: string, max: number = 20, min: number = 1, v: number = 5, numTiers: number = 4) {
+    constructor(name: string, max: number = 20, min: number = 0, v: number = 5, numTiers: number = 4) {
         this.name = name;
         this.maximum = max;
         this.minimum = min;
@@ -88,8 +88,30 @@ export class StatRange{
     }
     
     getStyle(){
-        return {
-            height: (this.value / this.maximum * 100) + '%'
+        if (this.minimum < 0)
+        {
+            var result: any = {
+                height: (this.value / -(this.maximum - this.minimum)  * 100) + '%'
+            }
+            if (this.value < 0) {
+                result.top = '50%';
+                result.background = 'red';
+            } else {
+                result.bottom = '50%';
+            }
+            return result;
         }
+        else
+        {
+            return {
+                height: (this.value / this.maximum * 100) + '%'
+            }
+        }
+    }
+
+    setValue(value: number){
+        this.value += value;
+        this.value = Math.min(this.maximum, this.value);
+        this.value = Math.max(this.minimum, this.value);
     }
 }
