@@ -26,21 +26,40 @@ h1 small {
     margin: 20px auto auto auto;
     width: 410px;    
 }
-.stats > div{
+.stats > .stat-col{
     float:left;
+}
+.stat-col > h5{
+  margin-top: 6px;    
+}
+.stat-row{
+    line-height: 0em;
+    background-color: rgba(255, 215, 0, 0.64);
+    border-radius: 2px;
+    margin: 0 auto 10px auto;
+}
+.stat-row > img {
+    margin-left:21px;
+}
+.stat-row > img, .stat-row > h5, .stat-row > span {
+  vertical-align: middle;    
+}
+.stat-row > span {
+    display: inline-block;
+    margin-left: 37%;
+    min-width: 100px;
+    text-align: right;
 }
 .stats h5 {
   font-size: 1em;
-  margin-top: 6px;
 }
 .stat-bar{
-    width: 44px;
+    width: 62px;
     background-color: #ddd;
     height: 100px;
     margin: 1em 10px;
     position: relative;
 }
-
 .stat-bar > .inner{
     position: absolute;
     bottom:0;
@@ -48,10 +67,11 @@ h1 small {
     width: 100%;
     background: green;
 }
-
-.stat-icon{
+.icon-small{
   max-width: 40px;
-  max-height: 40px;
+  max-height: 40px;    
+}
+.stat-icon{
   margin: auto;
   display: block;
 }

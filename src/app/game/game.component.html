@@ -141,13 +141,15 @@
     </div>
   </div>
   <div class="stats">
-      <div>
-          <img src="/content/flaticon/svg/coins.svg" class="stat-icon" alt="">
-          <h5>Treasury</h5>
-          <span class="label">{{game.city.treasury || 0}}</span>
+      <div class="stat-row">
+          <img src="/content/flaticon/svg/coins.svg" class="icon-small" alt="">
+          <h5 style="display:inline-block">Treasury</h5>
+          <span style="">
+            <span class="">{{game.city.treasury || 0}}&nbsp;<strong>Gold</strong></span>              
+          </span>
       </div>
-      <div>
-          <img src="/content/flaticon/svg/food.svg" class="stat-icon" alt="">
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/food.svg" class="stat-icon icon-small" alt="">
           <h5>Farming</h5>
           <span class="label">{{game.city.stats.farming.value}}</span>
           <div class="stat-bar">
@@ -157,8 +159,8 @@
               <img src="/content/svgs/expansion-black.svg" alt="">
           </a>
       </div>
-      <div>
-          <img src="/content/flaticon/svg/business.svg" class="stat-icon" alt="">
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/business.svg" class="stat-icon icon-small" alt="">
           <h5>Trade</h5>
           <span class="label">{{game.city.stats.trade.value}}</span>
           <div class="stat-bar">
@@ -168,8 +170,8 @@
               <img src="/content/svgs/expansion-black.svg" alt="">
           </a>
       </div>
-      <div>
-          <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" class="stat-icon" alt="">
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" class="stat-icon icon-small" alt="">
           <h5>Lore</h5>
           <span class="label">{{game.city.stats.lore.value}}</span>
           <div class="stat-bar">
@@ -179,8 +181,8 @@
               <img src="/content/svgs/expansion-black.svg" alt="">
           </a>
       </div>
-      <div>
-          <img src="/content/flaticon/svg/social.svg" class="stat-icon" alt="">
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/social.svg" class="stat-icon icon-small" alt="">
           <h5>Society</h5>
           <span class="label">{{game.city.stats.society.value}}</span>
           <div class="stat-bar">
@@ -190,8 +192,8 @@
               <img src="/content/svgs/expansion-black.svg" alt="">
           </a>
       </div>
-      <div>
-          <img src="/content/flaticon/svg/shapes.svg" class="stat-icon" alt="">
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/shapes.svg" class="stat-icon icon-small icon-small" alt="">
           <h5>Law</h5>
           <span class="label">{{game.city.stats.law.value}}</span>
           <div class="stat-bar">
