@@ -8,6 +8,19 @@
 shieldpicker{
   display: inline-block;
   width:88px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+h1{
+  line-height: 1em;
+  vertical-align: middle;
+}
+h1 > div {
+  display: inline-block;
+}
+h1 small {
+  color:#666;
+  font-size: .6em;
 }
 .stats{
     margin: 20px auto auto auto;

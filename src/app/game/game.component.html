@@ -1,7 +1,9 @@
 <div>
   <h1>
     <shieldpicker [game]="game" class="small"></shieldpicker>
-      {{game.city.name}}
+    <div>
+        <small>The Town Of</small><br>{{game.city.name}}
+    </div>
   </h1>
   <h3>Day {{game.city.day}}</h3>
   <div [style.display]="state < 2 ? 'block': 'none'">
