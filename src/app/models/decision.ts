@@ -1,7 +1,8 @@
 import {City} from './city';
+import {Utils} from '../utils';
 
 export class DecisionHistory {
-    constructor(public decisionID: string, public resolutionID: string) {}
+    constructor(public decisionID: string, public resolutionID: string){}
 }
 
 export class DecisionResolution {

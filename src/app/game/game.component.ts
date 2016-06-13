@@ -58,6 +58,7 @@ export class GameComponent implements OnInit {
       this.selectedResolution = res;
       this.game.history.push(new DecisionHistory(this.daily.id, res.id));
       this.game.city.applyResolution(res);
+      this.gameSvc.save();
   }
   
   finishResolution(): void {
@@ -69,16 +70,18 @@ export class GameComponent implements OnInit {
       {
           this.moveToTaxes();
       }
+      this.gameSvc.save();
   }
   
   moveToTaxes(): void{
-          this.state = ViewState.TaxesAndCrime;
-          this.taxCollected = this.game.city.collectTaxes(); 
-      
+    this.state = ViewState.TaxesAndCrime;
+    this.taxCollected = this.game.city.collectTaxes(); 
+    this.gameSvc.save();
   }
   
   finishExpansion(){
       this.moveToTaxes();
+      this.gameSvc.save();
   }
   
   finishDay(){

@@ -1,4 +1,5 @@
 import {DecisionResolution} from './decision';
+import {Utils} from '../utils';
 
 export class City {
     name: string;
@@ -33,6 +34,11 @@ export class City {
         
         return collected;        
     }
+
+    afterDeserialize(): void{
+        this.stats = Utils._Extend(Stats, this.stats);
+        this.stats.afterDeserialize();
+    }
 }
 
 export class Stats{
@@ -48,6 +54,14 @@ export class Stats{
         this.farming = new StatRange("Farming");
         this.society = new StatRange("Society");
         this.lore = new StatRange("Lore");
+    }
+
+    afterDeserialize(): void{
+        this.law = Utils._Extend(StatRange, this.law);
+        this.trade = Utils._Extend(StatRange, this.trade);
+        this.farming = Utils._Extend(StatRange, this.farming);
+        this.society = Utils._Extend(StatRange, this.society);
+        this.lore = Utils._Extend(StatRange, this.lore);
     }
 }
 

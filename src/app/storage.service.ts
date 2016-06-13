@@ -1,7 +1,7 @@
 /// <reference path="../lib/storejs.d.ts" />
 import { Injectable } from '@angular/core';
 import {GameConfig} from './models/game.config';
-
+import {Utils} from './utils';
 
 @Injectable()
 export class StorageService {
@@ -19,7 +19,9 @@ export class StorageService {
           return null;
       }
       
-      return <GameConfig>store.get(gameName);      
+      var last = Utils._Extend(GameConfig, store.get(gameName));
+      last.afterDeserialize();
+      return last;
   }
   hasSavedGame(): boolean{
       var gameName = store.get("lastSavedGame");
@@ -30,4 +32,5 @@ export class StorageService {
       
       return true;
   }
+  
 }
