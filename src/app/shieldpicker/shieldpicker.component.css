@@ -1,0 +1,13 @@
+.shield > img, .shield > svg{
+    max-width: 244px;
+    margin: auto;
+    display: block;
+    padding:10px;
+}
+
+.small:host > .shield > img, .small:host > .shield > svg{
+    max-width: 88px;
+    margin: auto;
+    display: block;
+    padding:10px;
+}

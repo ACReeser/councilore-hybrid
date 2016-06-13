@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import {City} from '../models/city';
 import {GameConfig} from '../models/game.config';
 import {GameService} from '../game.service';
+import {ShieldpickerComponent} from '../shieldpicker/shieldpicker.component';
 
 enum SortBy { Element = 0, Category }
 
@@ -13,7 +14,8 @@ enum SortBy { Element = 0, Category }
   selector: 'app-newgame',
   templateUrl: 'newgame.component.html',
   styleUrls: ['newgame.component.css'],
-  providers: [ChargesService]
+  providers: [ChargesService],
+  directives: [ShieldpickerComponent]
   //pipes: [OrderBy]
 })
 export class NewgameComponent implements OnInit {

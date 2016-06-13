@@ -5,6 +5,10 @@
     position: relative;
     right: 30px;
 }
+shieldpicker{
+  display: inline-block;
+  width:88px;
+}
 .stats{
     margin: 20px auto auto auto;
     width: 410px;    

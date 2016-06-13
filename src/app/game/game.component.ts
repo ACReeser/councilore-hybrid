@@ -4,6 +4,7 @@ import {DecisionService} from '../decision.service';
 import {DailyDecision, DecisionResolution, DecisionHistory} from '../models/decision';
 import {GameConfig} from '../models/game.config';
 import {GameService} from '../game.service';
+import {ShieldpickerComponent} from '../shieldpicker/shieldpicker.component';
 
 enum ViewState {
     DecisionList = 0,
@@ -22,7 +23,7 @@ interface Window {
   templateUrl: 'game.component.html',
   styleUrls: ['game.component.css'],
   providers: [DecisionService],
-  directives: [NgStyle]
+  directives: [NgStyle, ShieldpickerComponent]
 })
 export class GameComponent implements OnInit {
   state: ViewState = ViewState.DecisionList;

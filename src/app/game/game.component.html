@@ -1,5 +1,8 @@
 <div>
-  <h1>{{game.city.name}}</h1>
+  <h1>
+    <shieldpicker [game]="game" class="small"></shieldpicker>
+      {{game.city.name}}
+  </h1>
   <h3>Day {{game.city.day}}</h3>
   <div [style.display]="state < 2 ? 'block': 'none'">
     <h2>{{daily?.title}}</h2>
