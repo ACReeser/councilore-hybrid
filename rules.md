@@ -1,14 +1,14 @@
 ## What is Councilore
 
-Councilore is a hybrid card game/web game where players, as council members of a medieval town, must manage day-to-day decisions while accruing enough Gold and Influence to become Mayor-For-Life.
+Councilore is a hybrid card game/web game where players, as council members of a medieval town, must manage day-to-day decisions while accruing enough Gold and Influence to become Chairman-For-Life.
 
 ## Setup
 
 1.  Start a new game by selecting a town name, coat of arms, and victory conditions.
 2.  Each player starts with 5 Influence and 5 Gold.
 3.  Deal 5 cards to each player.
-4.  Elect the first Mayor by voting for which player has the fanciest outfit. In case of tie, see _Alternate Boring Mayor Election Rules_
-    *   **Alternate Boring Mayor Election Rules**: The oldest player is Mayor.
+4.  Elect the first Chairman by voting for which player has the fanciest outfit. In case of tie, see _Alternate Boring Chairman Election Rules_
+    *   **Alternate Boring Chairman Election Rules**: The oldest player is Chairman.
 5.  If there are new players, review the **Schemes and Motives** rules and **Victory Conditions**.
 6.  Begin the game by viewing the first Daily Decision.
 
@@ -40,13 +40,13 @@ Every day the Council is presented with a situation that must be dealt with. Thr
 
 After the situation and the options have been read by all players, each may try to persuade the other players as to the desirable course of action.
 
-If discussion runs long the Mayor may call for an immediate vote. _(A Mayor may not call for a vote before sufficient discussion has been had)_
+If discussion runs long the Chairman may call for an immediate vote. _(A Chairman may not call for a vote before sufficient discussion has been had)_
 
 To cast votes, each player privately chooses a card to correspond to their vote, as well as any number of Influence tokens to go along with their choice. Players may abstain from voting if they wish.
 
 At the same time, all players present their card and Influence token(s).
 
-Whichever option has the most combined cards and Influence tokens is chosen. A card is equivalent to an Influence token. _(In case of ties or all abstentions, the Mayor chooses the winning option from the leading options.)_
+Whichever option has the most combined cards and Influence tokens is chosen. A card is equivalent to an Influence token. _(In case of ties or all abstentions, the Chairman chooses the winning option from the leading options.)_
 
 ### Resolution
 
@@ -56,18 +56,18 @@ Depending on the situation and the option chosen, an **Expansion Phase** may beg
 
 ## Expansion
 
-During an Expansion phase, the Council may decide to build one community building. Each building requires an amount of Gold in the Treasury to be built. Players may discuss and try and persuade other players as to the desirable building. As in the Daily Decision phase, the Mayor may call for voting to prevent discussion from going on too long. Voting for the building happens just as in the Daily Decision phase: by simultaneously revealing cards and Influence.
+During an Expansion phase, the Council may decide to build one community building. Each building requires an amount of Gold in the Treasury to be built. Players may discuss and try and persuade other players as to the desirable building. As in the Daily Decision phase, the Chairman may call for voting to prevent discussion from going on too long. Voting for the building happens just as in the Daily Decision phase: by simultaneously revealing cards and Influence.
 
 ## Tax and Income
 
-Before the Mayor Reappointment phase, a random amount of Gold is deposited into the Treasury, and each player receives Rent. Rent is always one Gold, plus any Gold or Influence collected from properties owned.
+Before the Chairman Reappointment phase, a random amount of Gold is deposited into the Treasury, and each player receives Rent. Rent is always one Gold, plus any Gold or Influence collected from properties owned.
 
-## Mayor Reappointment
+## Chairman Reappointment
 
-After Tax and Income, the player with the most Influence is appointed Mayor. _(In case of ties, the outgoing Mayor decides the tiebreaker [including situations where the outgoing Mayor is in a tie])_
+After Tax and Income, the player with the most Influence is appointed Chairman. _(In case of ties, the outgoing Chairman decides the tiebreaker [including situations where the outgoing Chairman is in a tie])_
 
 ## Draw Cards
 
-Finally, after Mayor Reappointment, each player draws card(s) back up to a hand of 5 cards. Drawing starts to the left of the Mayor.
+Finally, after Chairman Reappointment, each player draws card(s) back up to a hand of 5 cards. Drawing starts to the left of the Chairman.
 
 This concludes the round, and a new Daily Decision is ready for the Council.
