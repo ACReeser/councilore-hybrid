@@ -140,6 +140,20 @@
         <a class="pure-button pure-button-primary" (click)="finishDay()">OK</a>
     </div>
   </div>
+  <div [style.display]="state==4 ? 'block': 'none'">
+    <h3>End of Day</h3>
+    <p class="text-center">
+        <strong>Mayor Reappointment</strong>
+        <img src="/content/svgs/throne-outline.svg" alt="">
+        <br>
+        <small>Player with the most Influence becomes Mayor</small>
+        <br>
+        <small>Draw Cards <i>(Up to a 5 card hand)</i></small>
+    </p>
+    <div class="text-center">
+        <a class="pure-button pure-button-primary" (click)="finishDay()">OK</a>
+    </div>
+  </div>
   <div class="stats">
       <div class="stat-row">
           <img src="/content/flaticon/svg/coins.svg" class="icon-small" alt="">
