@@ -154,6 +154,11 @@ h1 small {
     opacity:0;
     top:-50px;
 }
+.throne{
+    max-width: 144px;
+    display: block;
+    margin: auto;
+}
 .tumble-and-fade .coin.c0{
     left: calc(50% - 11px);
     animation-delay: .5s;

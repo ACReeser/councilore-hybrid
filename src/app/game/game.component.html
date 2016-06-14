@@ -137,19 +137,20 @@
         </div>
     </div>
     <div class="text-center">
-        <a class="pure-button pure-button-primary" (click)="finishDay()">OK</a>
+        <a class="pure-button pure-button-primary" (click)="moveToEndOfDay()">OK</a>
     </div>
   </div>
   <div [style.display]="state==4 ? 'block': 'none'">
     <h3>End of Day</h3>
-    <p class="text-center">
-        <strong>Mayor Reappointment</strong>
-        <img src="/content/svgs/throne-outline.svg" alt="">
+    <div class="text-center">
+        <h4>Chairman Reappointment</h4>
+        <img src="/content/svgs/stone-throne.svg" class="throne" alt="">
         <br>
-        <small>Player with the most Influence becomes Mayor</small>
+        <small>Player with the most Influence becomes Chairman</small>
+        <h4>Draw Cards</h4>
+        <small>Up to a 5 card hand</small>
         <br>
-        <small>Draw Cards <i>(Up to a 5 card hand)</i></small>
-    </p>
+    </div>
     <div class="text-center">
         <a class="pure-button pure-button-primary" (click)="finishDay()">OK</a>
     </div>

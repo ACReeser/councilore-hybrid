@@ -10,7 +10,8 @@ enum ViewState {
     DecisionList = 0,
     DecisionResolution,
     ExpansionPhase,
-    TaxesAndCrime
+    TaxesAndCrime,
+    EndOfDay,
 }
 
 interface Window {
@@ -78,6 +79,10 @@ export class GameComponent implements OnInit {
     this.state = ViewState.TaxesAndCrime;
     this.taxCollected = this.game.city.collectTaxes(); 
     this.gameSvc.save();
+  }
+  
+  moveToEndOfDay(): void{
+    this.state = ViewState.EndOfDay;      
   }
   
   finishExpansion(){
