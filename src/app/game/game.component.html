@@ -143,15 +143,15 @@
   <div class="stats">
       <div class="stat-row">
           <img src="/content/flaticon/svg/coins.svg" class="icon-small" alt="">
-          <h5 style="display:inline-block">Treasury</h5>
-          <span style="">
-            <span class="">{{game.city.treasury || 0}}&nbsp;<strong>Gold</strong></span>              
+          <h4 class="gold-label">Treasury</h4>
+          <span>
+            <span class="gold-value">{{game.city.treasury || 0}}</span>&nbsp;<strong>Gold</strong>
           </span>
       </div>
       <div class="stat-col">
           <img src="/content/flaticon/svg/food.svg" class="stat-icon icon-small" alt="">
-          <h5>Farming</h5>
-          <span class="label">{{game.city.stats.farming.value}}</span>
+          <strong class="label">Farming</strong>
+          <span class="value">{{game.city.stats.farming.value}}</span>
           <div class="stat-bar">
               <div class="inner"[ngStyle]="game.city.stats.farming.getStyle()"></div>
           </div>
@@ -161,8 +161,8 @@
       </div>
       <div class="stat-col">
           <img src="/content/flaticon/svg/business.svg" class="stat-icon icon-small" alt="">
-          <h5>Trade</h5>
-          <span class="label">{{game.city.stats.trade.value}}</span>
+          <strong class="label">Trade</strong>
+          <span class="value">{{game.city.stats.trade.value}}</span>
           <div class="stat-bar">
               <div class="inner" [ngStyle]="game.city.stats.trade.getStyle()"></div>
           </div>
@@ -172,8 +172,8 @@
       </div>
       <div class="stat-col">
           <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" class="stat-icon icon-small" alt="">
-          <h5>Lore</h5>
-          <span class="label">{{game.city.stats.lore.value}}</span>
+          <strong class="label">Lore</strong>
+          <span class="value">{{game.city.stats.lore.value}}</span>
           <div class="stat-bar">
               <div class="inner"[ngStyle]="game.city.stats.lore.getStyle()"></div>
           </div>
@@ -183,8 +183,8 @@
       </div>
       <div class="stat-col">
           <img src="/content/flaticon/svg/social.svg" class="stat-icon icon-small" alt="">
-          <h5>Society</h5>
-          <span class="label">{{game.city.stats.society.value}}</span>
+          <strong class="label">Society</strong>
+          <span class="value">{{game.city.stats.society.value}}</span>
           <div class="stat-bar">
               <div class="inner"[ngStyle]="game.city.stats.society.getStyle()"></div>
           </div>
@@ -194,8 +194,8 @@
       </div>
       <div class="stat-col">
           <img src="/content/flaticon/svg/shapes.svg" class="stat-icon icon-small icon-small" alt="">
-          <h5>Law</h5>
-          <span class="label">{{game.city.stats.law.value}}</span>
+          <strong class="label">Law</strong>
+          <span class="value">{{game.city.stats.law.value}}</span>
           <div class="stat-bar">
               <div class="inner" [ngStyle]="game.city.stats.law.getStyle()"></div>
           </div>

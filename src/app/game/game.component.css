@@ -29,7 +29,7 @@ h1 small {
 .stats > .stat-col{
     float:left;
 }
-.stat-col > h5{
+.stat-col > h4{
   margin-top: 6px;    
 }
 .stat-row{
@@ -39,9 +39,9 @@ h1 small {
     margin: 0 auto 10px auto;
 }
 .stat-row > img {
-    margin-left:21px;
+    margin:6px 0 6px 21px;
 }
-.stat-row > img, .stat-row > h5, .stat-row > span {
+.stat-row > img, .stat-row > h4, .stat-row > span {
   vertical-align: middle;    
 }
 .stat-row > span {
@@ -50,8 +50,18 @@ h1 small {
     min-width: 100px;
     text-align: right;
 }
-.stats h5 {
+.stats .label {
+  display: block;
   font-size: 1em;
+  text-align: center;
+  margin: 6px;
+}
+.gold-label{
+  display:inline-block;
+  margin: .25em;
+}
+.stats .gold-value{
+  font-size: 1.5em;
 }
 .stat-bar{
     width: 62px;
@@ -94,10 +104,10 @@ h1 small {
     max-width: 30px;
 }
 
-.label{
-    width: 64px;
+.value{
     text-align: center;
-    display: inline-block;
+    display: block;
+    font-size: 1.5em;
 }
 
 .results{
