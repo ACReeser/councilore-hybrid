@@ -7,7 +7,7 @@ Councilore is a hybrid card game/web game where players, as council members of a
 1.  Start a new game by selecting a town name, coat of arms, and victory conditions.
 2.  Each player starts with 5 Influence and 5 Gold.
 3.  Deal 5 cards to each player.
-4.  Elect the first Chairman by voting for which player has the fanciest outfit. In case of tie, see _Alternate Boring Chairman Election Rules_
+4.  Elect the first Chairman by voting for which player has the fanciest outfit. In case of tie, use _Alternate Boring Chairman Election Rules_ as a tiebreaker.
     *   **Alternate Boring Chairman Election Rules**: The oldest player is Chairman.
 5.  If there are new players, review the **Schemes and Motives** rules and **Victory Conditions**.
 6.  Begin the game by viewing the first Daily Decision.
