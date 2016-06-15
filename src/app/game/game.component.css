@@ -24,10 +24,11 @@ h1 small {
 }
 .stats{
     margin: 20px auto auto auto;
-    width: 410px;    
+    width: 100%;    
 }
 .stats > .stat-col{
     float:left;
+    width:20%;
 }
 .stat-col > h4{
   margin-top: 6px;    
@@ -46,7 +47,7 @@ h1 small {
 }
 .stat-row > span {
     display: inline-block;
-    margin-left: 37%;
+    margin-left: 29%;
     min-width: 100px;
     text-align: right;
 }
@@ -64,7 +65,6 @@ h1 small {
   font-size: 1.5em;
 }
 .stat-bar{
-    width: 62px;
     background-color: #ddd;
     height: 100px;
     margin: 1em 10px;
