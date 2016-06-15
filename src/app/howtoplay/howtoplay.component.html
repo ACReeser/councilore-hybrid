@@ -1,63 +1,77 @@
-<h2>What is Councilore</h2>
-<p>
-  Councilore is a hybrid card game/web game where players, as council members of a medieval town, must manage day-to-day decisions while accruing enough Gold and Influence to become Chairman-For-Life. 
-</p>
-<h2>Setup</h2>
-<ol>
-    <li><a href="" [routerLink]="['/new']">Start a new game</a> by selecting a town name, coat of arms, and victory conditions.</li>
-    <li>Each player starts with 5 Influence and 5 Gold.</li>
-    <li>Deal 5 cards to each player.</li>
-    <li>Elect the first Chairman by voting for which player has the fanciest outfit. In case of tie, use <i>Alternate Boring Chairman Election Rules</i> as a tiebreaker.
-        <ul>
-            <li>
-                <strong>Alternate Boring Chairman Election Rules</strong>: The oldest player is Chairman.
-            </li>
-        </ul>
-    </li>
-    <li>If there are new players, review the <strong>Schemes and Motives</strong> rules and <strong>Victory Conditions</strong>.</li>
-    <li>Begin the game by viewing the first Daily Decision.</li>
-</ol>
-<h2>Schemes and Motives</h2>
-<p>Cards denoted with the <i>Motive</i> keyword represent a hidden ambition to gain a title. Each card has a condition that can be fulfilled. Fulfilling Motive cards are the only way to win the game. At any point at time, if the condition on a Motive card has been met, the player holding the card must play it face-up on the table and collect the reward (either Gold or Influence) for fulling the Motive. The goal of the game is to fulfill as many Motive cards as possible. Once a player has fulfilled Motive cards whose reward totals (Gold OR Influence) equal or exceed the amount of Influence agreed upon in the Victory Conditions, that player has won.</p>
-<p>Cards denoted with the <i>Scheme</i> keyword represent intrigue actions available to the Councilmember. Unless explicitly noted on the card, Schemes can be played face up on the table at any point in the game. Unless explicitly noted on the card, Schemes do not take effect retroactively.</p>
-<h2>Victory Conditions</h2>
-<p>Victory Conditions are chosen before play commences.  Victory Conditions set the amount of Gold or Influence from Motives required to win.</p>
-<p>
-    <i>First-time players may prefer the Baron/Baroness victory condition.</i>
-</p>
-<strong>Suggested Victory Conditions:</strong>
-<ul>
-    <li>
-        <strong>Baron/Baroness</strong>&nbsp;- 15 Gold or Influence 
-    </li>
-    <li>
-        <strong>Countess/Count</strong>&nbsp;- 20 Gold or Influence         
-    </li>
-    <li>
-        <strong>Duke/Duchess</strong>&nbsp;- 25 Gold or Influence         
-    </li>
-</ul>
-<p>
-    <i>Alternate Victory Conditions</i>: If simpler play is wanted, players can instead agree upon a set number of fulfilled Motives at which victory is achieved. 
-</p>
-<h2>Daily Decision</h2>
-<p>Every day the Council is presented with a situation that must be dealt with. Three to six options will be presented. Some of these options may be unavailable because it requires a city attribute at a minimum level.</p>
-<h3>Voting</h3>
-<p>After the situation and the options have been read by all players, each may try to persuade the other players as to the desirable course of action.</p>
-<p>If discussion runs long the Chairman may call for an immediate vote. <i>(A Chairman may not call for a vote before sufficient discussion has been had)</i></p>
-<p>To cast votes, each player privately chooses a card to correspond to their vote, as well as any number of Influence tokens to go along with their choice. Players may abstain from voting if they wish.</p>
-<p>At the same time, all players present their card and Influence token(s).</p>
-<p>Whichever option has the most combined cards and Influence tokens is chosen. A card is equivalent to an Influence token. <i>(In case of ties or all abstentions, the Chairman chooses the winning option from the leading options.)</i> </p>
-<h3>Resolution</h3>
-<p>Once the chosen option is decided, a brief description is read to all players, as well as a list of effects of this decision.</p>
-<p>Depending on the situation and the option chosen, an <strong>Expansion Phase</strong> may begin. If the situation and option chosen do not cause an Expansion Phase, then play proceeds to the <strong>Tax and Income Phase</strong>. </p>
-<h2>Expansion</h2>
-<p>During an Expansion phase, the Council may decide to build one community building. Each building requires an amount of Gold in the Treasury to be built. Players may discuss and try and persuade other players as to the desirable building. As in the Daily Decision phase, the Chairman may call for voting to prevent discussion from going on too long. Voting for the building happens just as in the Daily Decision phase: by simultaneously revealing cards and Influence.</p>
-<p>Afterwards, starting left of the Chairman, each player may build a Building card from their hand, if they have enough gold.</p>
-<h2>Tax and Income</h2>
-<p>Before the Chairman Reappointment phase, a random amount of Gold is deposited into the Treasury, and each player receives Rent. Rent is always one Gold, plus any Gold or Influence collected from properties owned.</p>
-<h2>Chairman Reappointment</h2>
-<p>After Tax and Income, the player with the most Influence is appointed Chairman. <i>(In case of ties, the outgoing Chairman decides the tiebreaker [including situations where the outgoing Chairman is in a tie])</i> </p>
-<h2>Draw Cards</h2>
-<p>Finally, after Chairman Reappointment, each player draws card(s) back up to a hand of 5 cards. Drawing starts to the left of the Chairman.</p>
-<p>This concludes the round, and a new Daily Decision is ready for the Council.</p>
+<div class="pure-u-md-1-6"></div>
+<div class="pure-u-1 pure-u-md-2-3">
+    
+    <h2>What is Councilore</h2>
+    <p>
+    Councilore is a hybrid card game/web game where players, as council members of a medieval town, must manage day-to-day decisions while accruing enough Gold and Influence to become Chairman-For-Life. 
+    </p>
+    <h2>Setup</h2>
+    <ol>
+        <li><a href="" [routerLink]="['/new']">Start a new game</a> by selecting a town name, coat of arms, and victory conditions.</li>
+        <li>Elect the first Chairman by voting for which player has the fanciest outfit. In case of tie, use <i>Alternate Boring Chairman Election Rules</i> as a tiebreaker.
+            <ul>
+                <li>
+                    <strong>Alternate Boring Chairman Election Rules</strong>: The oldest player is Chairman.
+                </li>
+            </ul>
+        </li>
+        <li>Each player starts with 5 Influence and 5 Gold.</li>
+        <li>Deal 5 cards to each player.</li>
+        <li>If there are new players, review the <strong>Schemes and Motives</strong> rules and <strong>Victory Conditions</strong>.</li>
+        <li>Begin the game by viewing the first Daily Decision.</li>
+    </ol>
+    <h2>Schemes and Motives</h2>
+    <p>Cards denoted with the <i>Motive</i> keyword represent a hidden ambition to gain a title. Each card has a condition that can be fulfilled. Fulfilling Motive cards are the only way to win the game. At any point at time, if the condition on a Motive card has been met, the player holding the card must play it face-up on the table and collect the reward (either Gold or Influence) for fulling the Motive. The goal of the game is to fulfill as many Motive cards as possible. Once a player has fulfilled Motive cards whose reward totals (Gold OR Influence) equal or exceed the amount of Influence agreed upon in the Victory Conditions, that player has won.</p>
+    <p>Cards denoted with the <i>Scheme</i> keyword represent intrigue actions available to the Councilmember. Unless explicitly noted on the card, Schemes can be played face up on the table at any point in the game. Unless explicitly noted on the card, Schemes do not take effect retroactively.</p>
+    <h2>Victory Conditions</h2>
+    <p>Victory Conditions are chosen before play commences.  Victory Conditions set the amount of Gold or Influence from Motives required to win.</p>
+    <p>
+        <i>First-time players may prefer the Baron/Baroness victory condition.</i>
+    </p>
+    <strong>Suggested Victory Conditions:</strong>
+    <ul>
+        <li>
+            <strong>Baron/Baroness</strong>&nbsp;- 15 Gold or Influence 
+        </li>
+        <li>
+            <strong>Countess/Count</strong>&nbsp;- 20 Gold or Influence         
+        </li>
+        <li>
+            <strong>Duke/Duchess</strong>&nbsp;- 25 Gold or Influence         
+        </li>
+    </ul>
+    <p>
+        <i>Alternate Victory Conditions</i>: If simpler play is wanted, players can instead agree upon a set number of fulfilled Motives at which victory is achieved. 
+    </p>
+    <h2>Daily Decision</h2>
+    <p>Every day the Council is presented with a situation that must be dealt with. Three to six options will be presented. Some of these options may be unavailable because it requires a city attribute at a minimum level.</p>
+    <h3>Voting</h3>
+    <p>After the situation and the options have been read by all players, each may try to persuade the other players as to the desirable course of action.</p>
+    <p>If discussion runs long the Chairman may call for an immediate vote. <i>(A Chairman may not call for a vote before sufficient discussion has been had)</i></p>
+    <p>To cast votes, each player privately chooses a card to correspond to their vote, as well as zero or more Influence tokens to go along with their choice. Players may abstain from voting if they wish.</p>
+    <p>At the same time, all players present their card and Influence token(s).</p>
+    <p>Whichever option has the most combined cards and Influence tokens is chosen. A card is equivalent to an Influence token.</p>
+    <h4>Ties</h4>
+    <ul>
+        <li>
+            In case of a tied vote, the Chairman chooses the winning option from the leading options.
+        </li>
+        <li>
+            In case of all abstentions, the Chairman chooses the winning option from all options.
+        </li>
+    </ul>
+    <h3>Resolution</h3>
+    <p>Once the chosen option is decided, a brief description is read to all players, as well as a list of effects of this decision.</p>
+    <p>Depending on the situation and the option chosen, an <strong>Expansion Phase</strong> may begin. If the situation and option chosen do not cause an Expansion Phase, then play proceeds to the <strong>Tax and Income Phase</strong>. </p>
+    <h2>Expansion</h2>
+    <p>During an Expansion phase, the Council may decide to build one community building. Each building requires an amount of Gold in the Treasury to be built. Players may discuss and try and persuade other players as to the desirable building. As in the Daily Decision phase, the Chairman may call for voting to prevent discussion from going on too long. Voting for the building happens just as in the Daily Decision phase: by simultaneously revealing cards and Influence.</p>
+    <p>Afterwards, starting left of the Chairman, each player may build a Building card from their hand, if they have enough gold.</p>
+    <h2>Tax and Income</h2>
+    <p>Before the Chairman Reappointment phase, a random amount of Gold is deposited into the Treasury, and each player receives Rent. Rent is always one Gold, plus any Gold or Influence collected from properties owned.</p>
+    <h2>Chairman Reappointment</h2>
+    <p>After Tax and Income, the player with the most Influence is appointed Chairman. <i>(In case of ties, the outgoing Chairman decides the tiebreaker [including situations where the outgoing Chairman is in a tie])</i> </p>
+    <h2>Draw Cards</h2>
+    <p>Finally, after Chairman Reappointment, each player draws card(s) back up to a hand of 5 cards. Drawing starts to the left of the Chairman.</p>
+    <p>This concludes the round, and a new Daily Decision is ready for the Council.</p>
+</div>
+<div class="pure-u-md-1-6"></div>

@@ -1,10 +1,78 @@
-<div>
+<div class="pure-u-md-1-8"></div>
+<div class="pure-u-1 pure-u-md-1-4">
   <h1>
     <shieldpicker [game]="game" class="small"></shieldpicker>
     <div>
         <small>The Town Of</small><br>{{game.city.name}}
     </div>
-  </h1>
+  </h1>  
+  <div class="stats">
+      <div class="stat-row">
+          <img src="/content/flaticon/svg/coins.svg" class="icon-small" alt="">
+          <h4 class="gold-label">Treasury</h4>
+          <span>
+            <span class="gold-value">{{game.city.treasury || 0}}</span>&nbsp;<strong>Gold</strong>
+          </span>
+      </div>
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/food.svg" class="stat-icon icon-small" alt="">
+          <strong class="label">Farming</strong>
+          <span class="value">{{game.city.stats.farming.value}}</span>
+          <div class="stat-bar">
+              <div class="inner"[ngStyle]="game.city.stats.farming.getStyle()"></div>
+          </div>
+          <a href="" class="pure-button stat-change">
+              <img src="/content/svgs/expansion-black.svg" alt="">
+          </a>
+      </div>
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/business.svg" class="stat-icon icon-small" alt="">
+          <strong class="label">Trade</strong>
+          <span class="value">{{game.city.stats.trade.value}}</span>
+          <div class="stat-bar">
+              <div class="inner" [ngStyle]="game.city.stats.trade.getStyle()"></div>
+          </div>
+          <a href="" class="pure-button stat-change">
+              <img src="/content/svgs/expansion-black.svg" alt="">
+          </a>
+      </div>
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" class="stat-icon icon-small" alt="">
+          <strong class="label">Lore</strong>
+          <span class="value">{{game.city.stats.lore.value}}</span>
+          <div class="stat-bar">
+              <div class="inner"[ngStyle]="game.city.stats.lore.getStyle()"></div>
+          </div>
+          <a href="" class="pure-button stat-change">
+              <img src="/content/svgs/expansion-black.svg" alt="">
+          </a>
+      </div>
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/social.svg" class="stat-icon icon-small" alt="">
+          <strong class="label">Society</strong>
+          <span class="value">{{game.city.stats.society.value}}</span>
+          <div class="stat-bar">
+              <div class="inner"[ngStyle]="game.city.stats.society.getStyle()"></div>
+          </div>
+          <a href="" class="pure-button stat-change">
+              <img src="/content/svgs/expansion-black.svg" alt="">
+          </a>
+      </div>
+      <div class="stat-col">
+          <img src="/content/flaticon/svg/shapes.svg" class="stat-icon icon-small icon-small" alt="">
+          <strong class="label">Law</strong>
+          <span class="value">{{game.city.stats.law.value}}</span>
+          <div class="stat-bar">
+              <div class="inner" [ngStyle]="game.city.stats.law.getStyle()"></div>
+          </div>
+          <a href="" class="pure-button stat-change">
+              <img src="/content/svgs/expansion-black.svg" alt="">
+          </a>
+      </div>
+  </div>
+  
+</div>
+<div class="pure-u-1 pure-u-md-1-2">    
   <h3>Day {{game.city.day}}</h3>
   <div [style.display]="state < 2 ? 'block': 'none'">
     <h2>{{daily?.title}}</h2>
@@ -155,68 +223,5 @@
         <a class="pure-button pure-button-primary" (click)="finishDay()">OK</a>
     </div>
   </div>
-  <div class="stats">
-      <div class="stat-row">
-          <img src="/content/flaticon/svg/coins.svg" class="icon-small" alt="">
-          <h4 class="gold-label">Treasury</h4>
-          <span>
-            <span class="gold-value">{{game.city.treasury || 0}}</span>&nbsp;<strong>Gold</strong>
-          </span>
-      </div>
-      <div class="stat-col">
-          <img src="/content/flaticon/svg/food.svg" class="stat-icon icon-small" alt="">
-          <strong class="label">Farming</strong>
-          <span class="value">{{game.city.stats.farming.value}}</span>
-          <div class="stat-bar">
-              <div class="inner"[ngStyle]="game.city.stats.farming.getStyle()"></div>
-          </div>
-          <a href="" class="pure-button stat-change">
-              <img src="/content/svgs/expansion-black.svg" alt="">
-          </a>
-      </div>
-      <div class="stat-col">
-          <img src="/content/flaticon/svg/business.svg" class="stat-icon icon-small" alt="">
-          <strong class="label">Trade</strong>
-          <span class="value">{{game.city.stats.trade.value}}</span>
-          <div class="stat-bar">
-              <div class="inner" [ngStyle]="game.city.stats.trade.getStyle()"></div>
-          </div>
-          <a href="" class="pure-button stat-change">
-              <img src="/content/svgs/expansion-black.svg" alt="">
-          </a>
-      </div>
-      <div class="stat-col">
-          <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" class="stat-icon icon-small" alt="">
-          <strong class="label">Lore</strong>
-          <span class="value">{{game.city.stats.lore.value}}</span>
-          <div class="stat-bar">
-              <div class="inner"[ngStyle]="game.city.stats.lore.getStyle()"></div>
-          </div>
-          <a href="" class="pure-button stat-change">
-              <img src="/content/svgs/expansion-black.svg" alt="">
-          </a>
-      </div>
-      <div class="stat-col">
-          <img src="/content/flaticon/svg/social.svg" class="stat-icon icon-small" alt="">
-          <strong class="label">Society</strong>
-          <span class="value">{{game.city.stats.society.value}}</span>
-          <div class="stat-bar">
-              <div class="inner"[ngStyle]="game.city.stats.society.getStyle()"></div>
-          </div>
-          <a href="" class="pure-button stat-change">
-              <img src="/content/svgs/expansion-black.svg" alt="">
-          </a>
-      </div>
-      <div class="stat-col">
-          <img src="/content/flaticon/svg/shapes.svg" class="stat-icon icon-small icon-small" alt="">
-          <strong class="label">Law</strong>
-          <span class="value">{{game.city.stats.law.value}}</span>
-          <div class="stat-bar">
-              <div class="inner" [ngStyle]="game.city.stats.law.getStyle()"></div>
-          </div>
-          <a href="" class="pure-button stat-change">
-              <img src="/content/svgs/expansion-black.svg" alt="">
-          </a>
-      </div>
-  </div>
 </div>
+<div class="pure-u-md-1-8"></div>
