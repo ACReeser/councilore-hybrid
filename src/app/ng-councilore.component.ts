@@ -3,6 +3,7 @@ import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, Routes, Router } from '@angular/ro
 import {MenuComponent} from './menu/menu.component';
 import {GameComponent} from './game/game.component';
 import {HowToPlayComponent} from './howtoplay/howtoplay.component';
+import {AboutComponent} from './about/about.component';
 import {NewgameComponent} from './newgame/newgame.component';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { GameService } from './game.service';
@@ -16,7 +17,9 @@ import { StorageService } from './storage.service';
   { path: "/game", 
     component: GameComponent },
   { path: "/howtoplay", 
-    component: HowToPlayComponent }
+    component: HowToPlayComponent },
+  { path: "/about", 
+    component: AboutComponent }
 ])
 @Component({
   moduleId: module.id,

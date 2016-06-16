@@ -46,9 +46,10 @@ h1 small {
   vertical-align: middle;    
 }
 .stat-row > span {
-    display: inline-block;
-    margin-left: 29%;
+    display: block;
+    float:right;
     min-width: 100px;
+    margin:26px 16px 0 0;
     text-align: right;
 }
 .stats .label {
