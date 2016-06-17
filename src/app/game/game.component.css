@@ -160,6 +160,26 @@ h1 small {
     display: block;
     margin: auto;
 }
+table.expansion{
+    position: relative;
+}
+.expand-btn{
+    text-decoration: none;
+    display: block;
+}
+.expansion-splash{
+    width: 180px;
+    position: absolute;
+    left: calc(50% - 90px);
+    top: calc(50% - 90px);    
+}
+.expansion td {
+    min-width: 122px;
+}
+.expand-btn > img{
+    width: 122px;
+}
+
 .tumble-and-fade .coin.c0{
     left: calc(50% - 11px);
     animation-delay: .5s;
