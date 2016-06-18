@@ -110,7 +110,10 @@ h1 small {
     display: block;
     font-size: 1.5em;
 }
-
+.delta-image{
+  width:44px;
+  margin-right:12px;
+}
 .results{
     margin:auto;
     width:200px;
@@ -182,6 +185,31 @@ table.expansion{
 }
 .expand-btn > img{
     width: 122px;
+}
+.expansion-backdrop, .expansion-modal{
+  display: none;
+}
+.expansion-backdrop.active, .expansion-modal.active{
+  position: absolute;
+  display: block;
+}
+.expansion-backdrop.active{
+  width: 100%;
+  height: 100%;
+  top:0;
+  right:0;
+  background-color: rgba(0,0,0,.3);
+  z-index: 8;
+}
+.expansion-modal.active{
+  width: 400px;
+  height: 400px;
+  top:calc(50% - 250px);
+  left: calc(50% - 250px);
+  z-index: 9;
+  background-color: white;
+  border: 1px solid #bbb;
+  border-radius: 4px;
 }
 
 .tumble-and-fade .coin.c0{

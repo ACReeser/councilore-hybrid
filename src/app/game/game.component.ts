@@ -37,7 +37,8 @@ export class GameComponent implements OnInit {
         { left: (Math.random()*50 -25), 'animation-delay': Math.random() },
         { left: (Math.random()*50 -25), 'animation-delay': Math.random() }
       ];
-  
+  expansionModalOpen: boolean = false;
+
   constructor(private decSvc: DecisionService, private gameSvc: GameService) {
       this.game = gameSvc.currentGame;
   }
@@ -95,4 +96,12 @@ export class GameComponent implements OnInit {
       this.state = ViewState.DecisionList;
   }
 
+  expand(aType: string): void{
+      if (this.game.city.treasury >= 5)
+      {
+          this.expansionModalOpen = !this.expansionModalOpen;
+
+
+      }
+  }
 }

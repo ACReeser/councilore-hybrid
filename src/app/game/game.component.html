@@ -1,3 +1,11 @@
+<div class="expansion-backdrop" [class.active]="expansionModalOpen"></div>
+<div class="expansion-modal" [class.active]="expansionModalOpen">
+    <h1>{{expansionHeaderText}}</h1>
+    <img [src]="expansionSrc" alt="">
+    <div style="text-align:right; padding:10px;">
+        <a (click)="expansionModalOpen = false" class="pure-button">Cancel</a>
+    </div>
+</div>
 <div class="pure-u-md-1-24 pure-u-xl-1-12"></div>
 <div class="pure-u-1 pure-u-md-1-3 pure-u-lg-1-3 pure-u-xl-1-4">
   <h1>
@@ -115,12 +123,18 @@
             <tbody>
                 <tr *ngIf="selectedResolution?.treasuryDelta">
                     <td>
+                        <img src="/content/flaticon/svg/coins.svg" alt="" class="delta-image">
+                    </td>
+                    <td>
                         Treasury</td>
                     <td>
                         &nbsp;<span *ngIf="selectedResolution?.treasuryDelta > 0">+</span>
                         {{selectedResolution?.treasuryDelta}}</td>
                 </tr>
                 <tr *ngIf="selectedResolution?.lawDelta">
+                    <td>
+                        <img src="/content/flaticon/svg/shapes.svg" alt="" class="delta-image">
+                    </td>
                     <td>
                         Law</td>
                     <td>
@@ -130,12 +144,18 @@
                 </tr>
                 <tr *ngIf="selectedResolution?.farmingDelta">
                     <td>
+                        <img src="/content/flaticon/svg/food.svg" alt="" class="delta-image">
+                    </td>
+                    <td>
                         Farming</td>
                     <td>
                         &nbsp;<span *ngIf="selectedResolution?.farmingDelta > 0">+</span>
                         {{selectedResolution?.farmingDelta}}</td>
                 </tr>
                 <tr *ngIf="selectedResolution?.tradeDelta">
+                    <td>
+                        <img src="/content/flaticon/svg/business.svg" alt="" class="delta-image">
+                    </td>
                     <td>
                         Trade</td>
                     <td>
@@ -144,12 +164,18 @@
                 </tr>
                 <tr *ngIf="selectedResolution?.societyDelta">
                     <td>
+                        <img src="/content/flaticon/svg/social.svg" alt="" class="delta-image">
+                    </td>
+                    <td>
                         Society</td>
                     <td>
                         &nbsp;<span *ngIf="selectedResolution?.societyDelta > 0">+</span>
                         {{selectedResolution?.societyDelta}}</td>
                 </tr>
                 <tr *ngIf="selectedResolution?.loreDelta">
+                    <td>
+                        <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" alt="" class="delta-image">
+                    </td>
                     <td>
                         Lore</td>
                     <td>
@@ -172,13 +198,13 @@
             <tbody>
                 <tr>
                     <td>
-                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('farming')">
                             <img src="/content/flaticon/svg/food.svg" alt="" class="middle">            
                         </a>
                     </td>
                     <td></td>
                     <td>
-                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('trade')">
                             <img src="/content/flaticon/svg/business.svg" alt="" class="middle">            
                         </a>
                     </td>
@@ -187,7 +213,7 @@
                     <td></td>
                     <td>
                         <img src="/content/svgs/expansion-01.svg" class="expansion-splash" alt="" [class.zoom-in-fade-out]="state == 2"/>
-                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('law')">
                             <img src="/content/flaticon/svg/shapes.svg" alt="" class="middle">            
                         </a>                        
                     </td>
@@ -195,13 +221,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('lore')">
                             <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" alt="" class="middle">            
                         </a>                    
                     </td>
                     <td></td>
                     <td>
-                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('society')">
                             <img src="/content/flaticon/svg/social.svg" alt="" class="middle">            
                         </a>                           
                     </td>
@@ -219,9 +245,9 @@
   <div [style.display]="state==3 ? 'block': 'none'">
     <h3>Taxes</h3>
     <div class="bag-container" [class.tumble-and-fade]="state == 3">
-        <img src="/content/svgs/coin-01.svg" alt="" class="coin c0"/>
-        <img src="/content/svgs/coin-01.svg" alt="" class="coin c1"/>
-        <img src="/content/svgs/coin-01.svg" alt="" class="coin c2"/>
+        <img src="/content/svgs/coin-01.svg" alt="" class="coin c0" [style.visibility]="taxCollected > 0 ? 'visible' : 'hidden'"/>
+        <img src="/content/svgs/coin-01.svg" alt="" class="coin c1" [style.visibility]="taxCollected > 1 ? 'visible' : 'hidden'"/>
+        <img src="/content/svgs/coin-01.svg" alt="" class="coin c2" [style.visibility]="taxCollected > 2 ? 'visible' : 'hidden'"/>
         <img src="/content/svgs/bag-01.svg" alt="" class="bag">
         <div class="bag-amount">
             <span *ngIf="taxCollected > 0" class="coin-label">+</span>

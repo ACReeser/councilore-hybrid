@@ -16,6 +16,7 @@
                 "preDescription": "Have the whole citizenry start filling sandbags",
                 "postDescription": "",
                 "societyDelta": 1,
+                "treasuryDelta": -5,
                 "treasuryRequirement": 5
             },
             {
