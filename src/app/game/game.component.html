@@ -167,46 +167,48 @@
     <h3>Expansion Phase</h3>
     <div class="text-center">
     </div>
-    <table class="expansion">
-        <tbody>
-            <tr>
-                <td>
-                    <a href="javascript:void(0);" class="expand-btn pure-button">
-                        <img src="/content/flaticon/svg/food.svg" alt="" class="middle">            
-                    </a>
-                </td>
-                <td></td>
-                <td>
-                    <a href="javascript:void(0);" class="expand-btn pure-button">
-                        <img src="/content/flaticon/svg/business.svg" alt="" class="middle">            
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <img src="/content/svgs/expansion-01.svg" class="expansion-splash" alt="" />
-                    <a href="javascript:void(0);" class="expand-btn pure-button">
-                        <img src="/content/flaticon/svg/shapes.svg" alt="" class="middle">            
-                    </a>                        
-                </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="javascript:void(0);" class="expand-btn pure-button">
-                        <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" alt="" class="middle">            
-                    </a>                    
-                </td>
-                <td></td>
-                <td>
-                    <a href="javascript:void(0);" class="expand-btn pure-button">
-                        <img src="/content/flaticon/svg/social.svg" alt="" class="middle">            
-                    </a>                           
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="expansion-container">
+        <table class="expansion">
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                            <img src="/content/flaticon/svg/food.svg" alt="" class="middle">            
+                        </a>
+                    </td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                            <img src="/content/flaticon/svg/business.svg" alt="" class="middle">            
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="/content/svgs/expansion-01.svg" class="expansion-splash" alt="" [class.zoom-in-fade-out]="state == 2"/>
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                            <img src="/content/flaticon/svg/shapes.svg" alt="" class="middle">            
+                        </a>                        
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                            <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" alt="" class="middle">            
+                        </a>                    
+                    </td>
+                    <td></td>
+                    <td>
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2">
+                            <img src="/content/flaticon/svg/social.svg" alt="" class="middle">            
+                        </a>                           
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <p>
         
     </p>
