@@ -1,5 +1,4 @@
 import {City} from './city';
-import {Building} from './building';
 import {Utils} from '../utils';
 
 export class DecisionHistory {
@@ -29,7 +28,6 @@ export class DecisionResolution {
     
     allowsExpansionPhase: boolean = true;
     allowsRecruitmentPhase: boolean = true;
-    buildings: Building[] = [];
     
     static fromJson(obj: any): DecisionResolution{
         var instance = new DecisionResolution();
