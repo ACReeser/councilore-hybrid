@@ -1,10 +1,12 @@
 import {DecisionResolution} from './decision';
+import {Building} from './building';
 import {Utils} from '../utils';
 
 export class City {
     name: string;
     day: number;
     quadrants: string[] = [];
+    buildings: Building[] = [];
     stats: Stats;
     treasury: number = 0;
     
