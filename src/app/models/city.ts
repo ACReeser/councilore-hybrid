@@ -16,11 +16,11 @@ export class City {
     
     applyResolution(res: DecisionResolution): void{
         this.treasury += res.treasuryDelta || 0;
-        this.stats.law.setValue( res.lawDelta || 0);
-        this.stats.farming.setValue(res.farmingDelta || 0);
-        this.stats.trade.setValue(res.tradeDelta || 0);
-        this.stats.lore.setValue(res.loreDelta || 0);
-        this.stats.society.setValue(res.societyDelta || 0);
+        this.stats.law.changeValue( res.lawDelta || 0);
+        this.stats.farming.changeValue(res.farmingDelta || 0);
+        this.stats.trade.changeValue(res.tradeDelta || 0);
+        this.stats.lore.changeValue(res.loreDelta || 0);
+        this.stats.society.changeValue(res.societyDelta || 0);
     }
     
     collectTaxes(): number{
@@ -109,8 +109,8 @@ export class StatRange{
         }
     }
 
-    setValue(value: number){
-        this.value += value;
+    changeValue(delta: number){
+        this.value += delta;
         this.value = Math.min(this.maximum, this.value);
         this.value = Math.max(this.minimum, this.value);
     }

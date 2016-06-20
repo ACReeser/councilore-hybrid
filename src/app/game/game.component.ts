@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgStyle} from '@angular/common';
+import {NgStyle, NgIf} from '@angular/common';
 import {DecisionService} from '../decision.service';
 import {DailyDecision, DecisionResolution, DecisionHistory} from '../models/decision';
 import {GameConfig} from '../models/game.config';
@@ -24,7 +24,7 @@ interface Window {
   templateUrl: 'game.component.html',
   styleUrls: ['game.component.css'],
   providers: [DecisionService],
-  directives: [NgStyle, ShieldpickerComponent]
+  directives: [NgStyle, ShieldpickerComponent, NgIf]
 })
 export class GameComponent implements OnInit {
   state: ViewState = ViewState.DecisionList;
@@ -38,10 +38,13 @@ export class GameComponent implements OnInit {
         { left: (Math.random()*50 -25), 'animation-delay': Math.random() }
       ];
   expansionModalOpen: boolean = false;
+  canUpgrade: boolean = false;
 
   constructor(private decSvc: DecisionService, private gameSvc: GameService) {
       this.game = gameSvc.currentGame;
+      this.canUpgrade = false;
   }
+
 
   ngOnInit() {
       this.decSvc.getDailyFeed().subscribe((daily) => {
@@ -85,7 +88,9 @@ export class GameComponent implements OnInit {
   moveToEndOfDay(): void{
     this.state = ViewState.EndOfDay;      
   }
-  
+  finishPublicExpansion(){
+
+  }
   finishExpansion(){
       this.moveToTaxes();
       this.gameSvc.save();
@@ -96,12 +101,39 @@ export class GameComponent implements OnInit {
       this.state = ViewState.DecisionList;
   }
 
+  expansionType: string;
+  expansionHeaderText: string;
+  expansionSrc: string;
+  expansionDeltaSrc: string;
+  expansionDelta: number;
+  expansionDeltaType: string;
   expand(aType: string): void{
       if (this.game.city.treasury >= 5)
       {
           this.expansionModalOpen = !this.expansionModalOpen;
-
-
+          this.expansionType = aType;
+          this.expansionHeaderText = "Build a Farm";
+          this.expansionSrc = "/content/flaticon/svg/food.svg";
+          this.expansionDeltaSrc = "/content/flaticon/svg/food.svg";
+          this.expansionDelta = 2;
+          this.expansionDeltaType = "Farming";
       }
   }
+  //todo: break this out to its own component
+  build(): void{
+      switch(this.expansionType) {
+          case "farming":
+          this.game.city.stats.farming.changeValue(this.expansionDelta);
+          this.game.city.treasury -= 5;
+          break; 
+      }
+
+      this.expansionModalOpen = false;
+      this.finishPublicExpansion();
+  }
+  
+  upgrade(): void{
+      this.expansionModalOpen = false;      
+  }
+
 }

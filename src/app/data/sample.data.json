@@ -1,8 +1,8 @@
 [
     {
-        "id":"flashflood",
-        "title":"Flash Flood!",
-        "description":"",
+        "id":"flood",
+        "title":"Rising Waters",
+        "description":"Unusually heavy rains have the river overflowing its banks. Townsfolk are sure that several feet of water may flood the town!",
         "requirements": null,
         "resolutions": [
             {

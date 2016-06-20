@@ -2,8 +2,34 @@
 <div class="expansion-modal" [class.active]="expansionModalOpen">
     <h1>{{expansionHeaderText}}</h1>
     <img [src]="expansionSrc" alt="">
-    <div style="text-align:right; padding:10px;">
-        <a (click)="expansionModalOpen = false" class="pure-button">Cancel</a>
+    <table>
+        <tbody>
+            <tr class="expansion-benefit">
+                <td>
+                    <img [src]="expansionDeltaSrc" alt="" class="delta-image">
+                </td>
+                <td>{{expansionDeltaType}}</td>
+                <td>&nbsp;+{{expansionDelta}}</td>
+            </tr>
+            <tr class="expansion-cost">
+                <td>
+                    <img src="/content/flaticon/svg/coins-white.svg" alt="" class="delta-image">
+                </td>
+                <td>Treasury</td>
+                <td>&nbsp;-5</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a class="pure-button pure-button-primary expansion-button" (click)="build()" *ngIf="!canUpgrade">
+            <span>Build</span>
+        </a>
+        <a class="pure-button pure-button-primary expansion-button" (click)="upgrade()" *ngIf="canUpgrade">
+            <span>Upgrade</span>
+        </a>
+        <a (click)="expansionModalOpen = false" class="pure-button expansion-button">
+            <span>Cancel</span>            
+        </a>
     </div>
 </div>
 <div class="pure-u-md-1-24 pure-u-xl-1-12"></div>
