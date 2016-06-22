@@ -55,7 +55,9 @@ export class GameComponent implements OnInit {
           }
       });      
   }
-  
+  addGold(){
+      this.game.city.treasury += 1;
+  }
   selectResolution(res: DecisionResolution): void{
       if (res.disabled)
         return;

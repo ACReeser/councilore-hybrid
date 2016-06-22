@@ -58,6 +58,15 @@ h1 small {
   text-align: center;
   margin: 6px;
 }
+.treasury-add-btn{
+    padding:2px 4px;
+    text-decoration: none;
+    background-color:gold;
+    cursor: pointer;
+}
+.treasury-add-btn:hover{
+    background-color:goldenrod;
+}
 .gold-label{
   display:inline-block;
   margin: .25em;

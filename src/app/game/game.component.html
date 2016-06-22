@@ -45,7 +45,7 @@
           <img src="/content/flaticon/svg/coins.svg" class="icon-small" alt="">
           <h4 class="gold-label">Treasury</h4>
           <span>
-            <span class="gold-value">{{game.city.treasury || 0}}</span>&nbsp;<strong>Gold</strong>
+            <span class="gold-value">{{game.city.treasury || 0}}</span>&nbsp;<strong>Gold</strong>&nbsp;<a class="treasury-add-btn" (click)="addGold()">+</a>
           </span>
       </div>
       <div class="stat-col">
