@@ -236,14 +236,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td class="text-center">
+                        <strong *ngIf="game.city.treasury < 5" [class.flipInX]="state == 2">Insufficient</strong>
+                    </td>
                     <td>
                         <img src="/content/svgs/expansion-01.svg" class="expansion-splash" alt="" [class.zoom-in-fade-out]="state == 2"/>
-                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('law')">
+                        <img src="/content/flaticon/svg/no-coins.svg" alt="" class="middle" [class.flipInX]="state == 2" *ngIf="game.city.treasury < 5">            
+                        <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" (click)="expand('law')" *ngIf="game.city.treasury >= 5">
                             <img src="/content/flaticon/svg/shapes.svg" alt="" class="middle">            
                         </a>                        
                     </td>
-                    <td></td>
+                    <td class="text-center">
+                        <strong *ngIf="game.city.treasury < 5" [class.flipInX]="state == 2">Treasury</strong>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -284,6 +289,7 @@
     </div>
     <h3>Income</h3>
     <p class="text-center">
+        <small>Players receive 1 Gold and any Rent from their private Buildings</small>
     </p>
     <div class="text-center">
         <a class="pure-button pure-button-primary" (click)="moveToEndOfDay()">OK</a>
@@ -296,10 +302,11 @@
         <img src="/content/svgs/stone-throne.svg" class="throne" alt="">
         <br>
         <small>Player with the most Influence becomes Chairman</small>
-        <h4>Draw Cards</h4>
-        <small>Starting from the left of the Chairman, up to a 5 card hand</small>
-        <br>
     </div>
+    <h4>Draw Cards</h4>
+    <p class="text-center">
+        <small>Starting from the left of the Chairman, up to a 5 card hand</small>
+    </p>
     <div class="text-center">
         <a class="pure-button pure-button-primary" (click)="finishDay()">OK</a>
     </div>
