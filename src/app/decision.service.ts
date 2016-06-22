@@ -72,7 +72,7 @@ export class DecisionService {
             return false;
         }) || [];
       
-      result = candidates[Math.round(Math.random()* candidates.length)];
+      result = candidates[Math.round(Math.random()* (candidates.length - 1))];
       
       return result;
   }
