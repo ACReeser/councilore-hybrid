@@ -93,7 +93,7 @@ export class StatRange{
         if (this.minimum < 0)
         {
             var result: any = {
-                height: (this.value / -(this.maximum - this.minimum)  * 100) + '%'
+                height: Math.abs(this.value / (this.maximum - this.minimum)  * 100) + '%'
             }
             if (this.value < 0) {
                 result.top = '50%';

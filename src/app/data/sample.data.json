@@ -14,7 +14,7 @@
             {
                 "id": "sandbags",
                 "preDescription": "Have the whole citizenry start filling sandbags",
-                "postDescription": "",
+                "postDescription": "After a few hours, the village is safe from the flood.",
                 "societyDelta": 1,
                 "treasuryDelta": -5,
                 "treasuryRequirement": 5
@@ -33,6 +33,45 @@
                 "postDescription": "",
                 "tradeDelta": -1,
                 "loreDelta": 1
+            }
+        ]
+    },
+    {
+        "id":"farmguard",
+        "title":"Livestock Rustlers",
+        "description":"A group of farmers from outlying areas are asking for protection from thieves who are stealing pigs and cattle. They want guardsmen stationed at outposts to help chase down the rustlers.",
+        "requirements": null,
+        "resolutions": [
+            {
+                "id": "dynamite",
+                "preDescription": "Recruit some new militiamen to man the rural outposts",
+                "postDescription": "",
+                "treasuryRequirement": 5,
+                "treasuryDelta": -5,
+                "lawDelta": 1,
+                "farmingDelta": 1
+            },
+            {
+                "id": "sandbags",
+                "preDescription": "Rotate city guards across the new rural outposts",
+                "postDescription": "",
+                "lawRequirement": 5,
+                "lawDelta": 2,
+                "farmingDelta": 1
+            },
+            {
+                "id": "ignore",
+                "preDescription": "Make cattle rustling a hanging crime.",
+                "postDescription": "",
+                "societyDelta": -1,
+                "lawDelta": 1
+            },
+            {
+                "id": "evacuate",
+                "preDescription": "Suggest that the farmers build larger fences and decoy barns.",
+                "postDescription": "",
+                "farmingDelta": -1,
+                "lawDelta": -1
             }
         ]
     }
