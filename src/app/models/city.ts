@@ -97,7 +97,7 @@ export class StatRange{
             }
             if (this.value < 0) {
                 result.top = '50%';
-                result.background = 'red';
+                result.background = '#FF4136';
             } else {
                 result.bottom = '50%';
             }

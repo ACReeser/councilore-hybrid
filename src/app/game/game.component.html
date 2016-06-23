@@ -105,7 +105,9 @@
                     <tr *ngFor="let r of daily?.resolutions; let i = index">
                         <td>
                             <p class="requirement-badge">
-                                {{iToAF[i]}}                                
+                                <span class="badge badge-{{i+1}}">
+                                    {{iToAF[i]}}
+                                </span>
                             </p>
                         </td>
                         <td>
@@ -230,13 +232,15 @@
                 <tr>
                     <td>
                         <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('farming')">
-                            <img src="/content/flaticon/svg/food.svg" alt="" class="middle">            
+                            <img src="/content/flaticon/svg/food.svg" alt="" class="middle">    
+                            <span class="badge badge-1 badge-absolute">A</span>        
                         </a>
                     </td>
                     <td></td>
                     <td>
                         <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('trade')">
-                            <img src="/content/flaticon/svg/business.svg" alt="" class="middle">            
+                            <img src="/content/flaticon/svg/business.svg" alt="" class="middle">        
+                            <span class="badge badge-2 badge-absolute">B</span>            
                         </a>
                     </td>
                 </tr>
@@ -248,7 +252,8 @@
                         <img src="/content/svgs/expansion-01.svg" class="expansion-splash" alt="" [class.zoom-in-fade-out]="state == 2"/>
                         <img src="/content/flaticon/svg/no-coins.svg" alt="" class="middle" [class.flipInX]="state == 2" *ngIf="game.city.treasury < 5">            
                         <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" (click)="expand('law')" *ngIf="game.city.treasury >= 5">
-                            <img src="/content/flaticon/svg/shapes.svg" alt="" class="middle">            
+                            <img src="/content/flaticon/svg/shapes.svg" alt="" class="middle">      
+                            <span class="badge badge-3 badge-absolute">C</span>              
                         </a>                        
                     </td>
                     <td class="text-center">
@@ -258,13 +263,15 @@
                 <tr>
                     <td>
                         <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('lore')">
-                            <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" alt="" class="middle">            
+                            <img src="/content/flaticon/svg/feather-and-ink-bottle.svg" alt="" class="middle">       
+                            <span class="badge badge-4 badge-absolute">D</span>             
                         </a>                    
                     </td>
                     <td></td>
                     <td>
                         <a href="javascript:void(0);" class="expand-btn pure-button" [class.flipInX]="state == 2" [attr.disabled]="game.city.treasury < 5 ? 'true' : null" (click)="expand('society')">
                             <img src="/content/flaticon/svg/social.svg" alt="" class="middle">            
+                            <span class="badge badge-5 badge-absolute">E</span>        
                         </a>                           
                     </td>
                 </tr>
