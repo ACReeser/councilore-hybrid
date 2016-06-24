@@ -9,7 +9,8 @@ import {ShieldpickerComponent} from '../shieldpicker/shieldpicker.component';
 enum ViewState {
     DecisionList = 0,
     DecisionResolution,
-    ExpansionPhase,
+    PublicExpansionPhase,
+    PrivateExpansionPhase,
     TaxesAndCrime,
     EndOfDay,
 }
@@ -80,7 +81,7 @@ export class GameComponent implements OnInit {
   finishResolution(): void {
       if (this.selectedResolution.allowsExpansionPhase)
       {
-        this.state = ViewState.ExpansionPhase;
+        this.state = ViewState.PublicExpansionPhase;
       }
       else
       {
@@ -99,7 +100,7 @@ export class GameComponent implements OnInit {
     this.state = ViewState.EndOfDay;      
   }
   finishPublicExpansion(){
-
+    this.state = ViewState.PrivateExpansionPhase;
   }
   finishExpansion(){
       this.moveToTaxes();

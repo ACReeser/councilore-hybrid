@@ -223,7 +223,7 @@
     </div>
   </div>
   <div [style.display]="state==2 ? 'block': 'none'">
-    <h3>Expansion Phase</h3>
+    <h3>Public Expansion</h3>
     <div class="text-center">
     </div>
     <div class="expansion-container">
@@ -282,12 +282,21 @@
         
     </p>
     <div class="text-center">
-        <a class="pure-button pure-button-primary" (click)="finishExpansion()">OK</a>
+        <a class="pure-button pure-button-primary" (click)="finishPublicExpansion()">OK</a>
     </div>
   </div>
   <div [style.display]="state==3 ? 'block': 'none'">
+    <h3>Private Expansion</h3>
+    <div class="text-center">
+        Each player, starting from the left of the Chairman, may construct a Building, or may discard and redraw up to 3 cards. 
+    </div>
+    <div class="text-center">
+        <a class="pure-button pure-button-primary" (click)="finishExpansion()">OK</a>
+    </div>
+  </div>
+  <div [style.display]="state==4 ? 'block': 'none'">
     <h3>Taxes</h3>
-    <div class="bag-container" [class.tumble-and-fade]="state == 3">
+    <div class="bag-container" [class.tumble-and-fade]="state == 4">
         <img src="/content/svgs/coin-01.svg" alt="" class="coin c0" [style.visibility]="taxCollected > 0 ? 'visible' : 'hidden'"/>
         <img src="/content/svgs/coin-01.svg" alt="" class="coin c1" [style.visibility]="taxCollected > 1 ? 'visible' : 'hidden'"/>
         <img src="/content/svgs/coin-01.svg" alt="" class="coin c2" [style.visibility]="taxCollected > 2 ? 'visible' : 'hidden'"/>
@@ -307,7 +316,7 @@
         <a class="pure-button pure-button-primary" (click)="moveToEndOfDay()">OK</a>
     </div>
   </div>
-  <div [style.display]="state==4 ? 'block': 'none'">
+  <div [style.display]="state==5 ? 'block': 'none'">
     <h3>End of Day</h3>
     <div class="text-center">
         <h4>Chairman Reappointment</h4>
