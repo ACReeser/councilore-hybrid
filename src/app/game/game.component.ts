@@ -3,6 +3,7 @@ import {NgStyle, NgIf} from '@angular/common';
 import {DecisionService} from '../decision.service';
 import {DailyDecision, DecisionResolution, DecisionHistory} from '../models/decision';
 import {GameConfig} from '../models/game.config';
+import {Building} from '../models/building';
 import {GameService} from '../game.service';
 import {ShieldpickerComponent} from '../shieldpicker/shieldpicker.component';
 
@@ -118,29 +119,39 @@ export class GameComponent implements OnInit {
   expansionDeltaSrc: string;
   expansionDelta: number;
   expansionDeltaType: string;
+  candidateBuilding: Building;
   expand(aType: string): void{
       if (this.game.city.treasury >= 5)
       {
           this.expansionModalOpen = !this.expansionModalOpen;
           this.expansionType = aType;
-          this.expansionHeaderText = "Build a Farm";
-          this.expansionSrc = "/content/flaticon/svg/food.svg";
-          this.expansionDeltaSrc = "/content/flaticon/svg/food.svg";
-          this.expansionDelta = 2;
-          this.expansionDeltaType = "Farming";
+          
+          this.candidateBuilding = this.game.city.getUpgradeableBuildingFromStat(this.expansionType);
+          
+          if (!this.candidateBuilding) {
+              this.candidateBuilding = Building.statToBuilding(this.expansionType);
+          }
+          
+          this.expansionHeaderText = "Build a " + this.candidateBuilding.name;
+          this.expansionDeltaSrc = this.expansionSrc = "/content/flaticon/svg/"+this.candidateBuilding.statIconSrc+".svg";
+          
+          this.expansionDelta = this.candidateBuilding.canBeUpgraded ? 2 : 3;
+          this.expansionDeltaType = this.candidateBuilding.stat[0].toUpperCase() + this.candidateBuilding.stat.substr(1);
       }
   }
   //todo: break this out to its own component
   build(): void{
-      switch(this.expansionType) {
-          case "farming":
-          this.game.city.stats.farming.changeValue(this.expansionDelta);
-          this.game.city.treasury -= 5;
-          break; 
-      }
-
-      this.expansionModalOpen = false;
-      this.finishPublicExpansion();
+    this.game.city.stats.farming.changeValue(this.candidateBuilding.farmingDelta);
+    this.game.city.stats.trade.changeValue(this.candidateBuilding.tradeDelta);
+    this.game.city.stats.lore.changeValue(this.candidateBuilding.loreDelta);
+    this.game.city.stats.society.changeValue(this.candidateBuilding.societyDelta);
+    this.game.city.stats.law.changeValue(this.candidateBuilding.lawDelta);
+    this.game.city.treasury -= this.candidateBuilding.treasuryCost;
+    
+    this.game.city.buildings.push(Building.construct(this.candidateBuilding));
+    
+    this.expansionModalOpen = false;
+    this.finishPublicExpansion();
   }
   
   upgrade(): void{

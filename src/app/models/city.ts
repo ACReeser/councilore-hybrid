@@ -41,6 +41,15 @@ export class City {
         this.stats = Utils._Extend(Stats, this.stats);
         this.stats.afterDeserialize();
     }
+    
+    getUpgradeableBuildingFromStat(statName: string): Building {
+        for (var index = 0; index < this.buildings.length; index++) {
+            var building = this.buildings[index];
+            if (building.stat == statName && building.canBeUpgraded)
+                return building;
+        }
+        return null;
+    }
 }
 
 export class Stats{
