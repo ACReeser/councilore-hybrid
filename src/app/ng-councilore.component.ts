@@ -10,7 +10,7 @@ import { GameService } from './game.service';
 import { StorageService } from './storage.service';
 
 @Routes([
-  { path: "/menu",     
+  { path: "/",     
     component: MenuComponent,  }, 
   { path: "/new",     
     component: NewgameComponent }, 
@@ -33,6 +33,6 @@ export class NgCounciloreAppComponent implements OnInit {
   title = 'Councilore';
   constructor(private router: Router) {}
   ngOnInit() {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/']);
   }
 }
