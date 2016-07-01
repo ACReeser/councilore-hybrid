@@ -45,7 +45,7 @@ export class City {
     getUpgradeableBuildingFromStat(statName: string): Building {
         for (var index = 0; index < this.buildings.length; index++) {
             var building = this.buildings[index];
-            if (building.stat == statName && building.canBeUpgraded)
+            if (building.stat == statName && building.upgradeTo)
                 return building;
         }
         return null;

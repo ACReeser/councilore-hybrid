@@ -126,7 +126,11 @@ export class GameComponent implements OnInit {
           this.expansionModalOpen = !this.expansionModalOpen;
           this.expansionType = aType;
           
-          this.candidateBuilding = this.game.city.getUpgradeableBuildingFromStat(this.expansionType);
+          this.candidateBuilding = null;
+          var existingBuilding = this.game.city.getUpgradeableBuildingFromStat(this.expansionType);
+          
+          if (existingBuilding)
+                this.candidateBuilding = existingBuilding.upgradeTo;
           
           if (!this.candidateBuilding) {
               this.candidateBuilding = Building.statToBuilding(this.expansionType);
@@ -135,7 +139,7 @@ export class GameComponent implements OnInit {
           this.expansionHeaderText = "Build a " + this.candidateBuilding.name;
           this.expansionDeltaSrc = this.expansionSrc = "/content/flaticon/svg/"+this.candidateBuilding.statIconSrc+".svg";
           
-          this.expansionDelta = this.candidateBuilding.canBeUpgraded ? 2 : 3;
+          this.expansionDelta = this.candidateBuilding.upgradeTo ? 2 : 3;
           this.expansionDeltaType = this.candidateBuilding.stat[0].toUpperCase() + this.candidateBuilding.stat.substr(1);
       }
   }
