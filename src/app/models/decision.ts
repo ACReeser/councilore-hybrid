@@ -44,7 +44,7 @@ export class DecisionResolution {
             (this.farmingRequirement > aCity.stats.farming.value) ||
             (this.loreRequirement > aCity.stats.lore.value) ||
             (this.societyRequirement > aCity.stats.society.value) ||
-            (this.treasuryRequirement > aCity.treasury)
+            ((this.treasuryRequirement > aCity.treasury) && (this.treasuryRequirement > 0))
            ) === true;        
     }
 }
