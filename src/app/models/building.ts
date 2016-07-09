@@ -31,7 +31,7 @@ export class Building {
     
     //todo: make UpgradeTo instead of canUpgrade, doing leaves first, then dependencies
     static Plantation: Building = new Building('farming', "Plantation", null, 'plantation', 'food', 3);
-    static Farm: Building = new Building('farming', "Farm", Building.Plantation, 'farm', 'social', 2);
+    static Farm: Building = new Building('farming', "Farm", Building.Plantation, 'farm', 'food', 2);
     
     static Plaza: Building = new Building('trade', "Plaza", null, 'plaza', 'business', 0, 3);
     static Market: Building = new Building('trade', "Market", Building.Plaza, 'market', 'business', 0, 2);
@@ -79,7 +79,7 @@ export class Building {
             return Building.Market;
             case 'lore':
             return Building.Library;
-            case 'social':
+            case 'society':
             return Building.Chapel;
             case 'law':
             return Building.Barracks;
