@@ -17,6 +17,9 @@ export class DecisionService {
   private currentDailyFeed: Observable<DailyDecision>;
   private _dailyFeed: Observer<DailyDecision>;
   
+  private pullsSinceTax: number = 0;
+  private minimumDaysBetweenTax = 6;
+  
   constructor(private http: Http, private gameSvc: GameService) {
   }  
   
@@ -58,6 +61,7 @@ export class DecisionService {
   }
   
   private currentDay: DailyDecision;
+  private lastDecision: DailyDecision;
   private getNextDecision(): DailyDecision{
       var result: DailyDecision;
       var candidates: DailyDecision[] =
@@ -74,6 +78,18 @@ export class DecisionService {
       
       result = candidates[Math.round(Math.random()* (candidates.length - 1))];
       
+      if (result == this.lastDecision)
+        result = this.getNextDecision();
+      else if (result.id == "crownTax" && this.pullsSinceTax < this.minimumDaysBetweenTax)
+      {
+          result = this.getNextDecision();
+      }
+      
+      if (result.id == "crownTax")
+        this.pullsSinceTax = 0;
+      else
+        this.pullsSinceTax++;
+        
       return result;
   }
   
