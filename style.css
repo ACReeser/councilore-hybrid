@@ -1,3 +1,9 @@
+html{
+	font-family:'Vollkorn', 'serif';
+}
+body{
+	margin:0;
+}
 /* Display URL of hyperlinks when printing */
 @media print {
   a:after {
@@ -8,6 +14,26 @@
 /* Example media query expression for Responsive Web Design */
 @media (orientation: portrait) and (min-width:980px) {
   html {
-    display: none;
+    
   }
+}
+
+header img{
+	max-width:100%;
+}
+header{
+	text-align:center;
+	background: url("Parchment.jpg");
+	background-size: cover;
+}
+header h2{
+	font-weight:400;
+	color: white;
+	font-size:2em;
+	margin:0;
+	padding:6px 0;
+	background-color: #ed1c24;
+}
+.container{
+	padding:20px;
 }
